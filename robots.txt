@@ -1,0 +1,14 @@
+# robots.txt for SA Audit Limited
+# https://www.saaudit.co.nz/
+
+User-agent: *
+Allow: /
+
+# Sitemap location
+Sitemap: https://www.saaudit.co.nz/sitemap.xml
+
+# Block access to temporary or system files
+Disallow: /*.tmp$
+Disallow: /*.bak$
+Disallow: /404.html
+Disallow: /test/
