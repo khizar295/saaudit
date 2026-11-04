@@ -288,366 +288,112 @@
     </script>
 
     <!-- Navigation -->
-    <nav
-      id="navbar"
-      class="fixed top-0 left-0 right-0 z-50 transition-all duration-500"
-    >
-      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div class="flex items-center justify-between h-20">
-          <a href="#home" class="flex items-center gap-3 group">
-            <div
-              class="w-10 h-10 rounded-lg bg-[#10141e] flex items-center justify-center group-hover:bg-[#10142e] transition-colors"
-            >
-              <span class="text-[#00a6f4] font-bold text-lg">SA</span>
+    <nav id="navbar" class="fixed top-0 left-0 right-0 z-50 transition-all duration-500">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex items-center justify-between h-20">
+                <a href="#home" class="flex items-center gap-3 group">
+                    <div class="w-10 h-10 rounded-lg bg-[#10141e] flex items-center justify-center group-hover:bg-[#10142e] transition-colors">
+                        <span class="text-[#00a6f4] font-bold text-lg">SA</span>
+                    </div>
+                    <div class="hidden sm:block">
+                        <span id="navLogoText" class="text-[#10141e] font-bold text-lg">SA Audit</span>
+                        <span id="navLogoSub" class="text-[#00a6f4] text-xs block tracking-widest uppercase">Limited</span>
+                    </div>
+                </a>
+                
+                <div class="hidden lg:flex items-center gap-6">
+                    <a href="#about" class="nav-link text-[#10141e] hover:text-[#00a6f4] text-sm font-medium tracking-wide transition-colors">About</a>
+                    <div class="nav-dropdown">
+                        <a href="#services" class="nav-link text-[#10141e] hover:text-[#00a6f4] text-sm font-medium tracking-wide transition-colors inline-flex items-center gap-1">
+                            Services
+                            <i data-lucide="chevron-down" class="w-3.5 h-3.5"></i>
+                        </a>
+                        <div class="nav-dropdown-menu">
+                            <a href="services.html"><i data-lucide="file-search" class="w-4 h-4"></i> Financial Audits</a>
+                            <a href="services.html"><i data-lucide="scan-search" class="w-4 h-4"></i> Review Engagements</a>
+                            <a href="services.html"><i data-lucide="clipboard-check" class="w-4 h-4"></i> Agreed-Upon Procedures</a>
+                            <a href="services.html"><i data-lucide="settings" class="w-4 h-4"></i> Related Services</a>
+                        </div>
+                    </div>
+                    <div class="nav-dropdown">
+                        <a href="#" class="nav-link text-[#10141e] hover:text-[#00a6f4] text-sm font-medium tracking-wide transition-colors inline-flex items-center gap-1">Industries <i data-lucide="chevron-down" class="w-3.5 h-3.5"></i></a>
+                        <div class="nav-dropdown-menu">
+                            <a href="charities.html"><i data-lucide="heart-handshake" class="w-4 h-4"></i> Charities</a>
+                            <a href="not-for-profit.html"><i data-lucide="users" class="w-4 h-4"></i> Not-for-Profit</a>
+                            <a href="trusts.html"><i data-lucide="landmark" class="w-4 h-4"></i> Trusts</a>
+                            <a href="professional-practices.html"><i data-lucide="briefcase" class="w-4 h-4"></i> Professional Practices</a>
+                            <a href="smes.html"><i data-lucide="building-2" class="w-4 h-4"></i> SMEs</a>
+                            <a href="incorporated-societies.html"><i data-lucide="trophy" class="w-4 h-4"></i> Incorporated Societies</a>
+                        </div>
+                    </div>
+                    <a href="how-we-helped.html" class="nav-link text-[#10141e] hover:text-[#00a6f4] text-sm font-medium tracking-wide transition-colors">How We Helped</a>
+                    <div class="nav-dropdown"><a href="knowledge-centre.html" class="nav-link text-[#10141e] hover:text-[#00a6f4] text-sm font-medium tracking-wide transition-colors inline-flex items-center gap-1">Blogs <i data-lucide="chevron-down" class="w-3.5 h-3.5"></i></a><div class="nav-dropdown-menu"><a href="what-is-an-audit.html"><i data-lucide="file-search" class="w-4 h-4"></i> What is an Audit?</a><a href="audit-vs-review.html"><i data-lucide="scale" class="w-4 h-4"></i> Audit vs Review</a><a href="charity-audit-requirements-nz.html"><i data-lucide="heart-handshake" class="w-4 h-4"></i> Charity Audit Requirements</a><a href="trust-audit-requirements.html"><i data-lucide="scroll-text" class="w-4 h-4"></i> Trust Audit Requirements</a><a href="preparing-for-your-audit.html"><i data-lucide="clipboard-check" class="w-4 h-4"></i> Preparing for Your Audit</a><a href="common-audit-findings.html"><i data-lucide="alert-circle" class="w-4 h-4"></i> Common Audit Findings</a><a href="financial-statement-preparation.html"><i data-lucide="file-text" class="w-4 h-4"></i> Financial Statement Preparation</a><a href="nz-reporting-standards-explained.html"><i data-lucide="book-open" class="w-4 h-4"></i> NZ Reporting Standards</a></div></div>
+                    <a href="#why-us" class="nav-link text-[#10141e] hover:text-[#00a6f4] text-sm font-medium tracking-wide transition-colors">Why Us</a>
+                    <a href="#team" class="nav-link text-[#10141e] hover:text-[#00a6f4] text-sm font-medium tracking-wide transition-colors">Team</a>
+                    <a href="#contact" class="nav-link text-[#10141e] hover:text-[#00a6f4] text-sm font-medium tracking-wide transition-colors">Contact</a>
+                    <a href="#contact" class="ml-2 bg-[#10141e] hover:bg-[#10142e] text-white px-5 py-2.5 rounded-lg font-semibold text-sm tracking-wide transition-all hover:shadow-lg hover:shadow-black/25">
+                        Request an Audit Proposal
+                    </a>
+                </div>
+                
+                <button id="menuBtn" class="lg:hidden text-oak-700 p-2" aria-label="Open menu">
+                    <i data-lucide="menu" class="w-6 h-6"></i>
+                </button>
             </div>
-            <div class="hidden sm:block">
-              <span id="navLogoText" class="text-[#10141e] font-bold text-lg"
-                >SA Audit</span
-              >
-              <span
-                id="navLogoSub"
-                class="text-[#00a6f4] text-xs block tracking-widest uppercase"
-                >Limited</span
-              >
-            </div>
-          </a>
-
-          <div class="hidden lg:flex items-center gap-6">
-            <a
-              href="#about"
-              class="nav-link text-[#10141e] hover:text-[#00a6f4] text-sm font-medium tracking-wide transition-colors"
-              >About</a
-            >
-            <div class="nav-dropdown">
-              <a
-                href="#services"
-                class="nav-link text-[#10141e] hover:text-[#00a6f4] text-sm font-medium tracking-wide transition-colors inline-flex items-center gap-1"
-              >
-                Services
-                <i data-lucide="chevron-down" class="w-3.5 h-3.5"></i>
-              </a>
-              <div class="nav-dropdown-menu">
-                <a href="services.html"
-                  ><i data-lucide="file-search" class="w-4 h-4"></i> Financial
-                  Audits</a
-                >
-                <a href="services.html"
-                  ><i data-lucide="scan-search" class="w-4 h-4"></i> Review
-                  Engagements</a
-                >
-                <a href="services.html"
-                  ><i data-lucide="clipboard-check" class="w-4 h-4"></i>
-                  Agreed-Upon Procedures</a
-                >
-                <a href="services.html"
-                  ><i data-lucide="settings" class="w-4 h-4"></i> Related
-                  Services</a
-                >
-              </div>
-            </div>
-            <div class="nav-dropdown">
-              <a
-                href="#"
-                class="nav-link text-[#10141e] hover:text-[#00a6f4] text-sm font-medium tracking-wide transition-colors inline-flex items-center gap-1"
-                >Industries
-                <i data-lucide="chevron-down" class="w-3.5 h-3.5"></i
-              ></a>
-              <div class="nav-dropdown-menu">
-                <a href="charities.html"
-                  ><i data-lucide="heart-handshake" class="w-4 h-4"></i>
-                  Charities</a
-                >
-                <a href="not-for-profit.html"
-                  ><i data-lucide="users" class="w-4 h-4"></i> Not-for-Profit</a
-                >
-                <a href="trusts.html"
-                  ><i data-lucide="landmark" class="w-4 h-4"></i> Trusts</a
-                >
-                <a href="professional-practices.html"
-                  ><i data-lucide="briefcase" class="w-4 h-4"></i> Professional
-                  Practices</a
-                >
-                <a href="smes.html"
-                  ><i data-lucide="building-2" class="w-4 h-4"></i> SMEs</a
-                >
-                <a href="incorporated-societies.html"
-                  ><i data-lucide="trophy" class="w-4 h-4"></i> Incorporated
-                  Societies</a
-                >
-              </div>
-            </div>
-            <a
-              href="how-we-helped.html"
-              class="nav-link text-[#10141e] hover:text-[#00a6f4] text-sm font-medium tracking-wide transition-colors"
-              >How We Helped</a
-            >
-            <div class="nav-dropdown">
-              <a
-                href="knowledge-centre.html"
-                class="nav-link text-[#10141e] hover:text-[#00a6f4] text-sm font-medium tracking-wide transition-colors inline-flex items-center gap-1"
-                >Blogs <i data-lucide="chevron-down" class="w-3.5 h-3.5"></i
-              ></a>
-              <div class="nav-dropdown-menu">
-                <a href="what-is-an-audit.html"
-                  ><i data-lucide="file-search" class="w-4 h-4"></i> What is an
-                  Audit?</a
-                ><a href="audit-vs-review.html"
-                  ><i data-lucide="scale" class="w-4 h-4"></i> Audit vs
-                  Review</a
-                ><a href="charity-audit-requirements-nz.html"
-                  ><i data-lucide="heart-handshake" class="w-4 h-4"></i> Charity
-                  Audit Requirements</a
-                ><a href="trust-audit-requirements.html"
-                  ><i data-lucide="scroll-text" class="w-4 h-4"></i> Trust Audit
-                  Requirements</a
-                ><a href="preparing-for-your-audit.html"
-                  ><i data-lucide="clipboard-check" class="w-4 h-4"></i>
-                  Preparing for Your Audit</a
-                ><a href="common-audit-findings.html"
-                  ><i data-lucide="alert-circle" class="w-4 h-4"></i> Common
-                  Audit Findings</a
-                ><a href="financial-statement-preparation.html"
-                  ><i data-lucide="file-text" class="w-4 h-4"></i> Financial
-                  Statement Preparation</a
-                ><a href="nz-reporting-standards-explained.html"
-                  ><i data-lucide="book-open" class="w-4 h-4"></i> NZ Reporting
-                  Standards</a
-                >
-              </div>
-            </div>
-            <a
-              href="#why-us"
-              class="nav-link text-[#10141e] hover:text-[#00a6f4] text-sm font-medium tracking-wide transition-colors"
-              >Why Us</a
-            >
-            <a
-              href="#team"
-              class="nav-link text-[#10141e] hover:text-[#00a6f4] text-sm font-medium tracking-wide transition-colors"
-              >Team</a
-            >
-            <a
-              href="#contact"
-              class="nav-link text-[#10141e] hover:text-[#00a6f4] text-sm font-medium tracking-wide transition-colors"
-              >Contact</a
-            >
-            <a
-              href="#contact"
-              class="ml-2 bg-[#10141e] hover:bg-[#10142e] text-[#00a6f4] px-5 py-2.5 rounded-lg font-semibold text-sm tracking-wide transition-all hover:shadow-lg hover:shadow-[#00a6f4]/25"
-            >
-              Request an Audit Proposal
-            </a>
-          </div>
-
-          <button
-            id="menuBtn"
-            class="lg:hidden text-oak-700 p-2"
-            aria-label="Open menu"
-          >
-            <i data-lucide="menu" class="w-6 h-6"></i>
-          </button>
         </div>
-      </div>
     </nav>
 
     <!-- Mobile Menu Overlay -->
-    <div
-      id="mobileMenu"
-      class="mobile-menu fixed inset-0 z-[60] bg-white flex flex-col"
-    >
-      <div class="flex items-center justify-between px-4 sm:px-6 h-20">
-        <a href="#home" class="flex items-center gap-3">
-          <div
-            class="w-10 h-10 rounded-lg bg-[#10141e] flex items-center justify-center"
-          >
-            <span class="text-[#00a6f4] font-bold text-lg">SA</span>
-          </div>
-          <div>
-            <span class="text[#10141e] font-bold text-lg">SA Audit</span>
-            <span class="text-[#00a6f4] text-xs block tracking-widest uppercase"
-              >Limited</span
-            >
-          </div>
-        </a>
-        <button
-          id="closeMenuBtn"
-          class="text-[#10141e] p-2"
-          aria-label="Close menu"
-        >
-          <i data-lucide="x" class="w-6 h-6"></i>
-        </button>
-      </div>
-      <div class="flex flex-col items-center justify-center flex-1 gap-6">
-        <a
-          href="#about"
-          class="mobile-nav-link text[#10141e] text-2xl font-light tracking-wide hover:text-[#00a6f4]"
-          >About</a
-        >
-        <button
-          id="mobileServicesBtn"
-          class="mobile-nav-link text[#10141e] text-2xl font-light tracking-wide hover:text-[#00a6f4] inline-flex items-center gap-2"
-        >
-          Services
-          <i
-            data-lucide="chevron-down"
-            class="w-5 h-5 transition-transform"
-            id="mobileServicesChevron"
-          ></i>
-        </button>
-        <div
-          id="mobileServicesDropdown"
-          class="mobile-dropdown-content flex flex-col items-center gap-3"
-        >
-          <a
-            href="services.html"
-            class="text[#10141e] text-lg hover:text-[#00a6f4] transition-colors"
-            >Financial Audits</a
-          >
-          <a
-            href="services.html"
-            class="text[#10141e] text-lg hover:text-[#00a6f4] transition-colors"
-            >Review Engagements</a
-          >
-          <a
-            href="services.html"
-            class="text[#10141e] text-lg hover:text-[#00a6f4] transition-colors"
-            >Agreed-Upon Procedures</a
-          >
-          <a
-            href="services.html"
-            class="text[#10141e] text-lg hover:text-[#00a6f4] transition-colors"
-            >Related Services</a
-          >
+    <div id="mobileMenu" class="mobile-menu fixed inset-0 z-[60] bg-white flex flex-col">
+        <div class="flex items-center justify-between px-4 sm:px-6 h-20">
+            <a href="#home" class="flex items-center gap-3">
+                <div class="w-10 h-10 rounded-lg bg-[#10141e] flex items-center justify-center">
+                    <span class="text-[#00a6f4] font-bold text-lg">SA</span>
+                </div>
+                <div>
+                    <span class="text[#10141e] font-bold text-lg">SA Audit</span>
+                    <span class="text-[#00a6f4] text-xs block tracking-widest uppercase">Limited</span>
+                </div>
+            </a>
+            <button id="closeMenuBtn" class="text-[#10141e] p-2" aria-label="Close menu">
+                <i data-lucide="x" class="w-6 h-6"></i>
+            </button>
         </div>
-        <button
-          id="mobileIndustriesBtn"
-          class="text[#10141e] text-2xl font-light tracking-wide hover:text-[#00a6f4] inline-flex items-center gap-2"
-        >
-          Industries
-          <i
-            data-lucide="chevron-down"
-            class="w-5 h-5 transition-transform"
-            id="mobileIndustriesChevron"
-          ></i>
-        </button>
-        <div
-          id="mobileIndustriesDropdown"
-          class="mobile-dropdown-content flex flex-col items-center gap-3"
-        >
-          <a
-            href="charities.html"
-            class="text-[#10141e] text-lg hover:text-[#00a6f4]"
-            >Charities</a
-          >
-          <a
-            href="not-for-profit.html"
-            class="text-[#10141e] text-lg hover:text-[#00a6f4]"
-            >Not-for-Profit</a
-          >
-          <a
-            href="trusts.html"
-            class="text-[#10141e] text-lg hover:text-[#00a6f4]"
-            >Trusts</a
-          >
-          <a
-            href="professional-practices.html"
-            class="text-[#10141e] text-lg hover:text-[#00a6f4]"
-            >Professional Practices</a
-          >
-          <a
-            href="smes.html"
-            class="text-[#10141e] text-lg hover:text-[#00a6f4]"
-            >SMEs</a
-          >
-          <a
-            href="incorporated-societies.html"
-            class="text-[#10141e] text-lg hover:text-[#00a6f4]"
-            >Incorporated Societies</a
-          >
+        <div class="flex flex-col items-center justify-center flex-1 gap-6">
+            <a href="#about" class="mobile-nav-link text[#10141e] text-2xl font-light tracking-wide hover:text-[#00a6f4]">About</a>
+            <button id="mobileServicesBtn" class="mobile-nav-link text[#10141e] text-2xl font-light tracking-wide hover:text-[#00a6f4] inline-flex items-center gap-2">
+                Services <i data-lucide="chevron-down" class="w-5 h-5 transition-transform" id="mobileServicesChevron"></i>
+            </button>
+            <div id="mobileServicesDropdown" class="mobile-dropdown-content flex flex-col items-center gap-3">
+                <a href="services.html" class="text[#10141e] text-lg hover:text-[#00a6f4] transition-colors">Financial Audits</a>
+                <a href="services.html" class="text[#10141e] text-lg hover:text-[#00a6f4] transition-colors">Review Engagements</a>
+                <a href="services.html" class="text[#10141e] text-lg hover:text-[#00a6f4] transition-colors">Agreed-Upon Procedures</a>
+                <a href="services.html" class="text[#10141e] text-lg hover:text-[#00a6f4] transition-colors">Related Services</a>
+            </div>
+            <button id="mobileIndustriesBtn" class="text[#10141e] text-2xl font-light tracking-wide hover:text-[#00a6f4] inline-flex items-center gap-2">Industries <i data-lucide="chevron-down" class="w-5 h-5 transition-transform" id="mobileIndustriesChevron"></i></button>
+            <div id="mobileIndustriesDropdown" class="mobile-dropdown-content flex flex-col items-center gap-3">
+                <a href="charities.html" class="text-[#10141e] text-lg hover:text-[#00a6f4]">Charities</a>
+                <a href="not-for-profit.html" class="text-[#10141e] text-lg hover:text-[#00a6f4]">Not-for-Profit</a>
+                <a href="trusts.html" class="text-[#10141e] text-lg hover:text-[#00a6f4]">Trusts</a>
+                <a href="professional-practices.html" class="text-[#10141e] text-lg hover:text-[#00a6f4]">Professional Practices</a>
+                <a href="smes.html" class="text-[#10141e] text-lg hover:text-[#00a6f4]">SMEs</a>
+                <a href="incorporated-societies.html" class="text-[#10141e] text-lg hover:text-[#00a6f4]">Incorporated Societies</a>
+            </div>
+            <a href="how-we-helped.html" class="mobile-nav-link text-[#10141e] text-2xl font-light tracking-wide hover:text-[#00a6f4]">How We Helped</a>
+            <button id="mobileBlogsBtn" class="text-[#10141e] text-2xl font-light tracking-wide hover:text-[#00a6f4] inline-flex items-center gap-2">Blogs <i data-lucide="chevron-down" class="w-5 h-5 transition-transform" id="mobileBlogsChevron"></i></button>
+            <div id="mobileBlogsDropdown" class="mobile-dropdown-content flex flex-col items-center gap-3"><a href="what-is-an-audit.html" class="text-[#10141e] text-lg hover:text-[#00a6f4]">What is an Audit?</a><a href="audit-vs-review.html" class="text-[#10141e] text-lg hover:text-[#00a6f4]">Audit vs Review</a><a href="charity-audit-requirements-nz.html" class="text-[#10141e] text-lg hover:text-[#00a6f4]">Charity Audit Requirements</a><a href="trust-audit-requirements.html" class="text-[#10141e] text-lg hover:text-[#00a6f4]">Trust Audit Requirements</a><a href="preparing-for-your-audit.html" class="text-[#10141e] text-lg hover:text-[#00a6f4]">Preparing for Your Audit</a><a href="common-audit-findings.html" class="text-[#10141e] text-lg hover:text-[#00a6f4]">Common Audit Findings</a><a href="financial-statement-preparation.html" class="text-[#10141e] text-lg hover:text-[#00a6f4]">Financial Statement Preparation</a><a href="nz-reporting-standards-explained.html" class="text-[#10141e] text-lg hover:text-[#00a6f4]">NZ Reporting Standards</a></div>
+            <a href="#why-us" class="mobile-nav-link text-[#10141e] text-2xl font-light tracking-wide hover:text-[#00a6f4]">Why Us</a>
+            <a href="#team" class="mobile-nav-link text-[#10141e] text-2xl font-light tracking-wide hover:text-[#00a6f4]">Team</a>
+            <a href="#contact" class="mobile-nav-link text-[#10141e] text-2xl font-light tracking-wide hover:text-[#00a6f4]">Contact</a>
+            <div class="flex flex-col gap-3 mt-4">
+                <a href="#contact" class="bg-[#10141e] hover:bg-[#10142e] text-white px-8 py-3 rounded-lg font-semibold text-lg tracking-wide transition-all text-center">
+                    Request an Audit Proposal
+                </a>
+                <a href="#contact" class="border-2 border-[#00a6f4] text-[#00a6f4] hover:text-slate-950 hover:border-slate-950 px-8 py-3 rounded-lg font-medium text-lg tracking-wide transition-all text-center">
+                    Book a Consultation
+                </a>
+            </div>
         </div>
-        <a
-          href="how-we-helped.html"
-          class="mobile-nav-link text-[#10141e] text-2xl font-light tracking-wide hover:text-[#00a6f4]"
-          >How We Helped</a
-        >
-        <button
-          id="mobileBlogsBtn"
-          class="text-[#10141e] text-2xl font-light tracking-wide hover:text-[#00a6f4] inline-flex items-center gap-2"
-        >
-          Blogs
-          <i
-            data-lucide="chevron-down"
-            class="w-5 h-5 transition-transform"
-            id="mobileBlogsChevron"
-          ></i>
-        </button>
-        <div
-          id="mobileBlogsDropdown"
-          class="mobile-dropdown-content flex flex-col items-center gap-3"
-        >
-          <a
-            href="what-is-an-audit.html"
-            class="text-[#10141e] text-lg hover:text-[#00a6f4]"
-            >What is an Audit?</a
-          ><a
-            href="audit-vs-review.html"
-            class="text-[#10141e] text-lg hover:text-[#00a6f4]"
-            >Audit vs Review</a
-          ><a
-            href="charity-audit-requirements-nz.html"
-            class="text-[#10141e] text-lg hover:text-[#00a6f4]"
-            >Charity Audit Requirements</a
-          ><a
-            href="trust-audit-requirements.html"
-            class="text-[#10141e] text-lg hover:text-[#00a6f4]"
-            >Trust Audit Requirements</a
-          ><a
-            href="preparing-for-your-audit.html"
-            class="text-[#10141e] text-lg hover:text-[#00a6f4]"
-            >Preparing for Your Audit</a
-          ><a
-            href="common-audit-findings.html"
-            class="text-[#10141e] text-lg hover:text-[#00a6f4]"
-            >Common Audit Findings</a
-          ><a
-            href="financial-statement-preparation.html"
-            class="text-[#10141e] text-lg hover:text-[#00a6f4]"
-            >Financial Statement Preparation</a
-          ><a
-            href="nz-reporting-standards-explained.html"
-            class="text-[#10141e] text-lg hover:text-[#00a6f4]"
-            >NZ Reporting Standards</a
-          >
-        </div>
-        <a
-          href="#why-us"
-          class="mobile-nav-link text-[#10141e] text-2xl font-light tracking-wide hover:text-[#00a6f4]"
-          >Why Us</a
-        >
-        <a
-          href="#team"
-          class="mobile-nav-link text-[#10141e] text-2xl font-light tracking-wide hover:text-[#00a6f4]"
-          >Team</a
-        >
-        <a
-          href="#contact"
-          class="mobile-nav-link text-[#10141e] text-2xl font-light tracking-wide hover:text-[#00a6f4]"
-          >Contact</a
-        >
-        <div class="flex flex-col gap-3 mt-4">
-          <a
-            href="#contact"
-            class="bg-[#10141e] hover:bg-[#10142e] text-[#00a6f4] px-8 py-3 rounded-lg font-semibold text-lg tracking-wide transition-all text-center"
-          >
-            Request an Audit Proposal
-          </a>
-          <a
-            href="#contact"
-            class="border-2 border-[#00a6f4] text-[#00a6f4] hover:bg-[#00a6f4] hover:text-[#10141e] px-8 py-3 rounded-lg font-medium text-lg tracking-wide transition-all text-center"
-          >
-            Book a Consultation
-          </a>
-        </div>
-      </div>
     </div>
 
     <!-- Breadcrumb -->
@@ -678,10 +424,10 @@
         <div class="max-w-4xl mx-auto">
           <div class="fade-up">
             <div
-              class="inline-flex items-center gap-2 bg-[#10141e] border border-[#00a6f4] rounded-full px-4 py-1.5 mb-8"
+              class="inline-flex items-center gap-2 bg-[#10141e] rounded-full px-4 py-1.5 mb-8"
             >
-              <i data-lucide="briefcase" class="w-4 h-4 text-[#00a6f4]"></i
-              ><span class="text-[#00a6f4] text-sm font-medium tracking-wide"
+              <i data-lucide="briefcase" class="w-4 h-4 text-white"></i
+              ><span class="text-white text-sm font-medium tracking-wide"
                 >Our Services</span
               >
             </div>
@@ -1121,7 +867,7 @@
           </p>
           <a
             href="contact.html"
-            class="inline-flex items-center justify-center gap-2 bg-[#10140e] hover:bg-[#10141e] text-[#00a6f4] px-8 py-3 rounded-lg font-semibold tracking-wide transition-all hover:shadow-lg hover:shadow-[#00a6f4]/25"
+            class="inline-flex items-center justify-center gap-2 bg-[#10140e] hover:bg-[#10141e] text-white px-8 py-3 rounded-lg font-semibold tracking-wide transition-all hover:shadow-lg hover:shadow-black/25"
             ><i data-lucide="message-circle" class="w-5 h-5"></i> Talk to Us —
             We'll Advise You</a
           >
@@ -1217,7 +963,7 @@
                 Whether you're a business, charity, or club — we're here to help. Contact SA Audit Limited today for a no-obligation discussion about your audit needs.
             </p>
             <div class="flex flex-col sm:flex-row gap-4 justify-center">
-                <a href="#contact" class="pulse-sky inline-flex items-center justify-center gap-2 bg-[#10140e] hover:bg-[#10141e] text-[#00a6f4] px-10 py-4 rounded-lg font-bold text-lg tracking-wide transition-all hover:shadow-xl hover:shadow-[#00a6f4]/25">
+                <a href="#contact" class="pulse-sky inline-flex items-center justify-center gap-2 bg-[#10140e] hover:bg-[#10141e] text-white px-10 py-4 rounded-lg font-bold text-lg tracking-wide transition-all hover:shadow-xl hover:shadow-black/25">
                     <i data-lucide="file-text" class="w-5 h-5"></i>
                     Request an Audit Proposal
                 </a>
@@ -1299,9 +1045,9 @@
         Get a Quote
     </a>
 
-    <!-- Sticky Get a Quote — Mobile -->
+        <!-- Sticky Get a Quote — Mobile -->
     <div class="lg:hidden fixed bottom-0 left-0 right-0 z-40 bg-white/95 backdrop-blur-sm border-t border-oak-200 shadow-lg p-3">
-        <a href="#contact" class="flex items-center justify-center gap-2 bg-gold-500 hover:bg-gold-400 text-oak-950 px-6 py-3 rounded-lg font-bold text-sm tracking-wide transition-all w-full">
+        <a href="#contact" class="flex items-center justify-center gap-2 bg-slate-950 hover:bg-sky-500 text-white px-6 py-3 rounded-lg font-bold text-sm tracking-wide transition-all w-full">
             <i data-lucide="file-text" class="w-5 h-5"></i>
             Get a Quote
         </a>
