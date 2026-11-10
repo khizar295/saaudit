@@ -232,10 +232,22 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
         ::-webkit-scrollbar-track { background: #f0f4f8; }
         ::-webkit-scrollbar-thumb { background: #fbbf24; border-radius: 4px; }
         ::-webkit-scrollbar-thumb:hover { background: #f59e0b; }
+        html,
+body {
+    width: 100%;
+    max-width: 100%;
+    overflow-x: clip;
+}
+
+#mobileMenu {
+    width: 100%;
+    max-width: 100vw;
+    overflow-x: hidden;
+    box-sizing: border-box;
+}
     </style>
 </head>
-<body class="bg-white text-oak-900 overflow-x-hidden w-full" style="max-width: 100%;
-    overflow-x: clip;">
+<body class="bg-white text-oak-900 overflow-x-hidden w-full">
     <!-- Google Tag Manager (noscript) -->
     <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-PPVB6LXR"
     height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
@@ -467,7 +479,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
         </div>
         <div class="flex flex-col items-center justify-start flex-1 gap-6 overflow-y-auto py-6">
             <a href="#about" class="mobile-nav-link text[#10141e] text-2xl font-light tracking-wide hover:text-[#00a6f4]">About</a>
-            <button id="mobileServicesBtn" class="mobile-nav-link text[#10141e] text-2xl font-light tracking-wide hover:text-[#00a6f4] inline-flex items-center gap-2">
+            <button id="mobileServicesBtn" class="text-[#10141e] text-2xl font-light tracking-wide hover:text-[#00a6f4] inline-flex items-center gap-2">
                 Services <i data-lucide="chevron-down" class="w-5 h-5 transition-transform" id="mobileServicesChevron"></i>
             </button>
             <div id="mobileServicesDropdown" class="mobile-dropdown-content flex flex-col items-center gap-3">
