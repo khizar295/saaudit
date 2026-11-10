@@ -124,21 +124,25 @@
       .nav-link {
         position: relative;
       }
-        .nav-link::after {
-            content: '';
-            position: absolute;
-            bottom: -2px;
-            left: 0;
-            width: 0;
-            height: 2px;
-            background: #10141e;
-            transition: width 0.3s ease;
-        }
+      .nav-link::after {
+        content: "";
+        position: absolute;
+        bottom: -2px;
+        left: 0;
+        width: 0;
+        height: 2px;
+        background: #10141e;
+        transition: width 0.3s ease;
+      }
       .nav-link:hover::after {
         width: 100%;
       }
       .nav-dropdown {
         position: relative;
+      }
+      * {
+        scrollbar-color: #020617 #f0f4f8;
+        scrollbar-width: thin;
       }
       .nav-dropdown-menu {
         position: absolute;
@@ -161,29 +165,57 @@
         visibility: visible;
         transform: translateY(0);
       }
-                .nav-dropdown-menu a {
-            display: flex;
-            align-items: center;
-            gap: 0.5rem;
-            padding: 0.625rem 1.25rem;
-            font-size: 0.875rem;
-            color: #10141e;
-            transition: all 0.15s ease;
-        }
-        .nav-dropdown-menu a:hover {
-            background: #10141e;
-            color: #00a6f4;
-        }
+      .nav-dropdown-menu a {
+        display: flex;
+        align-items: center;
+        gap: 0.5rem;
+        padding: 0.625rem 1.25rem;
+        font-size: 0.875rem;
+        color: #10141e;
+        transition: all 0.15s ease;
+      }
+      .nav-dropdown-menu a:hover {
+        background: #10141e;
+        color: #00a6f4;
+      }
+
       .mobile-dropdown-content {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 12px;
+        width: 100%;
         max-height: 0;
         overflow: hidden;
-        transition: max-height 0.3s ease;
+        opacity: 0;
+        visibility: hidden;
+        transition:
+          max-height 0.35s ease,
+          opacity 0.25s ease;
       }
+
       .mobile-dropdown-content.open {
-        max-height: 500px;
+        max-height: 600px;
+        opacity: 1;
+        visibility: visible;
+        overflow-y: auto;
+        padding: 12px 0;
+        flex-shrink: 0;
       }
+
+      .mobile-dropdown-content a {
+        display: block;
+        width: 100%;
+        text-align: center;
+        padding: 8px 12px;
+        font-size: 17px;
+        color: #10141e;
+        cursor: pointer;
+      }
+
       .mobile-menu {
         transform: translateX(100%);
+        overflow-x: clip;
         transition: transform 0.3s ease;
       }
       .mobile-menu.open {
@@ -192,15 +224,36 @@
       ::-webkit-scrollbar {
         width: 8px;
       }
+
       ::-webkit-scrollbar-track {
         background: #f0f4f8;
       }
+
       ::-webkit-scrollbar-thumb {
-        background: #fbbf24;
+        background: #020617;
         border-radius: 4px;
       }
+
       ::-webkit-scrollbar-thumb:hover {
-        background: #f59e0b;
+        background: #020617;
+      }
+
+      * {
+        scrollbar-color: #020617 #f0f4f8;
+        scrollbar-width: thin;
+      }
+      html,
+      body {
+        width: 100%;
+        max-width: 100%;
+        overflow-x: clip;
+      }
+
+      #mobileMenu {
+        width: 100%;
+        max-width: 100vw;
+        overflow-x: hidden;
+        box-sizing: border-box;
       }
     </style>
   </head>
@@ -456,7 +509,9 @@
     </nav>
 
     <!-- Mobile Menu Overlay -->
-    <div id="mobileMenu" class="mobile-menu fixed inset-0 z-[60] bg-white flex flex-col"
+    <div
+      id="mobileMenu"
+      class="mobile-menu fixed inset-0 z-[60] bg-white flex flex-col"
     >
       <div class="flex items-center justify-between px-4 sm:px-6 h-20">
         <a href="#home" class="flex items-center gap-3">
@@ -480,7 +535,9 @@
           <i data-lucide="x" class="w-6 h-6"></i>
         </button>
       </div>
-      <div class="flex flex-col items-center justify-center flex-1 gap-6">
+      <div
+        class="flex flex-col items-center justify-start flex-1 min-h-0 gap-6 overflow-y-auto py-6 w-full"
+      >
         <a
           href="#about"
           class="mobile-nav-link text[#10141e] text-2xl font-light tracking-wide hover:text-[#00a6f4]"
@@ -488,7 +545,7 @@
         >
         <button
           id="mobileServicesBtn"
-          class="mobile-nav-link text[#10141e] text-2xl font-light tracking-wide hover:text-[#00a6f4] inline-flex items-center gap-2"
+          class="text-[#10141e] text-2xl font-light tracking-wide hover:text-[#00a6f4] inline-flex items-center gap-2"
         >
           Services
           <i
@@ -654,18 +711,21 @@
       </div>
     </div>
 
-
-<!-- Breadcrumb -->
+    <!-- Breadcrumb -->
     <section class="pt-28 pb-4 bg-gradient-to-br from-oak-50 to-white">
       <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <nav class="fade-up" aria-label="Breadcrumb">
           <ol class="flex flex-wrap items-center gap-2 text-sm text-oak-500">
             <li>
-              <a href="index.html" class="text-slate-950 hover:text-sky-500 transition-colors"
+              <a
+                href="index.html"
+                class="text-slate-950 hover:text-sky-500 transition-colors"
                 >Home</a
               >
             </li>
-            <li><i data-lucide="chevron-right" class="w-4 h-4 text-slate-950"></i></li>
+            <li>
+              <i data-lucide="chevron-right" class="w-4 h-4 text-slate-950"></i>
+            </li>
             <li>
               <a
                 href="services.html"
@@ -673,13 +733,14 @@
                 >Services</a
               >
             </li>
-            <li><i data-lucide="chevron-right" class="w-4 h-4 text-slate-950"></i></li>
+            <li>
+              <i data-lucide="chevron-right" class="w-4 h-4 text-slate-950"></i>
+            </li>
             <li class="text-sky-500 font-medium">Agreed-Upon Procedures</li>
           </ol>
         </nav>
       </div>
     </section>
-
 
     <!-- Hero section -->
     <section
@@ -727,7 +788,6 @@
         </div>
       </div>
     </section>
-
 
     <!-- Service overview section -->
     <section class="py-24 lg:py-32 bg-white">
@@ -782,8 +842,6 @@
       </div>
     </section>
 
-
-
     <!-- Who is this for  -->
     <section class="py-24 lg:py-32 bg-oak-50">
       <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -796,8 +854,8 @@
             class="text-3xl sm:text-4xl font-bold text-slate-950 mt-3 mb-6 leading-tight"
           >
             When
-            <span class="font-serif text-sky-500">AUP Engagements</span> Are
-            the Right Choice
+            <span class="font-serif text-sky-500">AUP Engagements</span> Are the
+            Right Choice
           </h2>
         </div>
         <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-6 stagger-children">
@@ -892,10 +950,7 @@
             <div
               class="w-12 h-12 rounded-xl bg-sky-500/10 flex items-center justify-center mb-5"
             >
-              <i
-                data-lucide="heart-handshake"
-                class="w-6 h-6 text-sky-500"
-              ></i>
+              <i data-lucide="heart-handshake" class="w-6 h-6 text-sky-500"></i>
             </div>
             <h3 class="text-xl font-bold text-slate-950 mb-3">
               Charities & NFPs
@@ -909,7 +964,6 @@
         </div>
       </div>
     </section>
-
 
     <!-- benefits -->
     <section class="py-24 lg:py-32 bg-white">
@@ -927,7 +981,7 @@
           </h2>
         </div>
         <div class="grid md:grid-cols-2 gap-8 stagger-children">
-          <div  
+          <div
             class="fade-up flex gap-4 bg-gradient-to-br from-slate-100 to-white rounded-2xl p-6 border border-oak-200"
           >
             <div
@@ -1044,8 +1098,6 @@
       </div>
     </section>
 
-
-
     <!-- Our process -->
     <section class="py-24 lg:py-32 bg-oak-50">
       <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -1068,7 +1120,7 @@
             >
               1
             </div>
-            <h3 class="text-lg font-bold text-slate-950  mb-2">
+            <h3 class="text-lg font-bold text-slate-950 mb-2">
               Define Procedures
             </h3>
             <p class="text-slate-500 text-sm leading-relaxed">
@@ -1083,7 +1135,9 @@
             >
               2
             </div>
-            <h3 class="text-lg font-bold text-slate-950 mb-2">Plan & Execute</h3>
+            <h3 class="text-lg font-bold text-slate-950 mb-2">
+              Plan & Execute
+            </h3>
             <p class="text-slate-500 text-sm leading-relaxed">
               Our experienced team carries out the agreed procedures on the
               specified subject matter. We work efficiently and keep you
@@ -1096,7 +1150,9 @@
             >
               3
             </div>
-            <h3 class="text-lg font-bold text-slate-950 mb-2">Report Findings</h3>
+            <h3 class="text-lg font-bold text-slate-950 mb-2">
+              Report Findings
+            </h3>
             <p class="text-slate-500 text-sm leading-relaxed">
               We prepare a comprehensive report of factual findings based on the
               procedures performed. The report is clear, practical, and tailored
@@ -1122,61 +1178,101 @@
       </div>
     </section>
 
-
-
     <!-- FAQ Section -->
     <section id="faq" class="py-24 lg:py-32 bg-[#10140e]">
-        <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="text-center mb-16 fade-up">
-                <span class="text-[#00a6f4] font-semibold text-sm tracking-widest uppercase">Frequently Asked Questions</span>
-                <h2 class="text-3xl sm:text-4xl lg:text-5xl font-bold text-[#bacada] mt-3 mb-6 leading-tight">
-                    Agreed-Upon Procedures <span class="font-serif text-[#00a6f4]">FAQs</span>
-                </h2>
-                <p class="text-[#bacada] text-lg leading-relaxed">
-                    We've answered the questions our clients ask most often. Can't find what you're looking for? Contact us directly.
-                </p>
-            </div>
+      <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="text-center mb-16 fade-up">
+          <span
+            class="text-[#00a6f4] font-semibold text-sm tracking-widest uppercase"
+            >Frequently Asked Questions</span
+          >
+          <h2
+            class="text-3xl sm:text-4xl lg:text-5xl font-bold text-[#bacada] mt-3 mb-6 leading-tight"
+          >
+            Agreed-Upon Procedures
+            <span class="font-serif text-[#00a6f4]">FAQs</span>
+          </h2>
+          <p class="text-[#bacada] text-lg leading-relaxed">
+            We've answered the questions our clients ask most often. Can't find
+            what you're looking for? Contact us directly.
+          </p>
+        </div>
 
-            <div class="space-y-4 fade-up">
-                <div class="faq-item bg-[#10140e] rounded-xl border border-oak-200 overflow-hidden">
-                    <button class="faq-toggle w-full flex items-center justify-between px-6 py-5 text-left text-white hover:bg-[#00a6f4] hover:text-[#10140e] transition-colors" aria-expanded="false">
-                        <span class="hover:text-[#10140e] font-semibold text-base pr-4">What is the difference between an AUP and an audit?</span>
-                        <i data-lucide="chevron-down" class="w-5 h-5 hover:text-[#10140e] flex-shrink-0 faq-icon transition-transform duration-300"></i>
-                    </button>
-                    <div class="faq-content hidden px-6 pb-5">
-                        <p class="text-white leading-relaxed">                A financial audit provides a high level of assurance — the
+        <div class="space-y-4 fade-up">
+          <div
+            class="faq-item bg-[#10140e] rounded-xl border border-oak-200 overflow-hidden"
+          >
+            <button
+              class="faq-toggle w-full flex items-center justify-between px-6 py-5 text-left text-white hover:bg-[#00a6f4] hover:text-[#10140e] transition-colors"
+              aria-expanded="false"
+            >
+              <span class="hover:text-[#10140e] font-semibold text-base pr-4"
+                >What is the difference between an AUP and an audit?</span
+              >
+              <i
+                data-lucide="chevron-down"
+                class="w-5 h-5 hover:text-[#10140e] flex-shrink-0 faq-icon transition-transform duration-300"
+              ></i>
+            </button>
+            <div class="faq-content hidden px-6 pb-5">
+              <p class="text-white leading-relaxed">
+                A financial audit provides a high level of assurance — the
                 auditor gives an opinion on whether the financial statements are
                 true and fair. An AUP engagement provides no assurance opinion.
                 Instead, we perform specific procedures agreed upon by the
                 engaging party and report the factual findings. AUP is more
                 targeted, more flexible, and typically more cost-effective when
-                you only need verification of specific items.</p>
-                    </div>
-                </div>
+                you only need verification of specific items.
+              </p>
+            </div>
+          </div>
 
-                <div class="faq-item bg-[#10140e] rounded-xl border border-oak-200 overflow-hidden">
-                    <button class="faq-toggle w-full flex items-center justify-between px-6 py-5 text-left text-white hover:bg-[#00a6f4] hover:text-[#10140e] transition-colors" aria-expanded="false">
-                        <span class="hover:text-[#10140e] font-semibold text-base pr-4">When should I choose an AUP instead of an audit?</span>
-                        <i data-lucide="chevron-down" class="w-5 h-5 hover:text-[#10140e] flex-shrink-0 faq-icon transition-transform duration-300"></i>
-                    </button>
-                    <div class="faq-content hidden px-6 pb-5">
-                        <p class="text-white leading-relaxed">An AUP is ideal when you need independent verification of
+          <div
+            class="faq-item bg-[#10140e] rounded-xl border border-oak-200 overflow-hidden"
+          >
+            <button
+              class="faq-toggle w-full flex items-center justify-between px-6 py-5 text-left text-white hover:bg-[#00a6f4] hover:text-[#10140e] transition-colors"
+              aria-expanded="false"
+            >
+              <span class="hover:text-[#10140e] font-semibold text-base pr-4"
+                >When should I choose an AUP instead of an audit?</span
+              >
+              <i
+                data-lucide="chevron-down"
+                class="w-5 h-5 hover:text-[#10140e] flex-shrink-0 faq-icon transition-transform duration-300"
+              ></i>
+            </button>
+            <div class="faq-content hidden px-6 pb-5">
+              <p class="text-white leading-relaxed">
+                An AUP is ideal when you need independent verification of
                 specific financial data, but don't need an assurance opinion.
                 Common scenarios include: grant acquittals, vendor compliance
                 verification, demonstrating financial viability to a retailer,
                 verifying specific balances or transactions, and meeting
                 contractual reporting requirements. If your stakeholders require
-                an audit opinion, a full audit would be needed instead.</p>
-                    </div>
-                </div>
+                an audit opinion, a full audit would be needed instead.
+              </p>
+            </div>
+          </div>
 
-                <div class="faq-item bg-[#10140e] rounded-xl border border-oak-200 overflow-hidden">
-                    <button class="faq-toggle w-full flex items-center justify-between px-6 py-5 text-left text-white hover:bg-[#00a6f4] hover:text-[#10140e] transition-colors" aria-expanded="false">
-                        <span class="hover:text-[#10140e] font-semibold text-base pr-4">How much does an AUP engagement cost?</span>
-                        <i data-lucide="chevron-down" class="w-5 h-5 hover:text-[#10140e    ] flex-shrink-0 faq-icon transition-transform duration-300"></i>
-                    </button>
-                    <div class="faq-content hidden px-6 pb-5">
-                        <p class="text-white leading-relaxed">                The cost depends on the scope and complexity of the procedures
+          <div
+            class="faq-item bg-[#10140e] rounded-xl border border-oak-200 overflow-hidden"
+          >
+            <button
+              class="faq-toggle w-full flex items-center justify-between px-6 py-5 text-left text-white hover:bg-[#00a6f4] hover:text-[#10140e] transition-colors"
+              aria-expanded="false"
+            >
+              <span class="hover:text-[#10140e] font-semibold text-base pr-4"
+                >How much does an AUP engagement cost?</span
+              >
+              <i
+                data-lucide="chevron-down"
+                class="w-5 h-5 hover:text-[#10140e ] flex-shrink-0 faq-icon transition-transform duration-300"
+              ></i>
+            </button>
+            <div class="faq-content hidden px-6 pb-5">
+              <p class="text-white leading-relaxed">
+                The cost depends on the scope and complexity of the procedures
                 to be performed. Because AUP engagements are targeted, they are
                 generally more affordable than a full audit. We'll discuss the
                 required procedures with you upfront and provide a transparent
@@ -1186,50 +1282,80 @@
                   class="text-sky-500 hover:text-white/75 underline"
                   >Contact us</a
                 >
-                to discuss your needs.</p>
-                    </div>
-                </div>
+                to discuss your needs.
+              </p>
+            </div>
+          </div>
 
-                <div class="faq-item bg-[#10140e] rounded-xl border border-oak-200 overflow-hidden">
-                    <button class="faq-toggle w-full flex items-center justify-between px-6 py-5 text-left text-white hover:bg-[#00a6f4] hover:text-[#10140e] transition-colors" aria-expanded="false">
-                        <span class="hover:text-[#10140e] font-semibold text-base pr-4">Can AUP findings be used for regulatory reporting?</span>
-                        <i data-lucide="chevron-down" class="w-5 h-5 hover:text-[#10140e] flex-shrink-0 faq-icon transition-transform duration-300"></i>
-                    </button>
-                    <div class="faq-content hidden px-6 pb-5">
-                        <p class="text-white leading-relaxed">Yes, in many cases AUP findings can satisfy regulatory reporting
+          <div
+            class="faq-item bg-[#10140e] rounded-xl border border-oak-200 overflow-hidden"
+          >
+            <button
+              class="faq-toggle w-full flex items-center justify-between px-6 py-5 text-left text-white hover:bg-[#00a6f4] hover:text-[#10140e] transition-colors"
+              aria-expanded="false"
+            >
+              <span class="hover:text-[#10140e] font-semibold text-base pr-4"
+                >Can AUP findings be used for regulatory reporting?</span
+              >
+              <i
+                data-lucide="chevron-down"
+                class="w-5 h-5 hover:text-[#10140e] flex-shrink-0 faq-icon transition-transform duration-300"
+              ></i>
+            </button>
+            <div class="faq-content hidden px-6 pb-5">
+              <p class="text-white leading-relaxed">
+                Yes, in many cases AUP findings can satisfy regulatory reporting
                 requirements that call for independent verification of specific
                 data. However, it depends on the specific regulatory
                 requirements. Some regulators require a full audit opinion,
                 while others accept AUP findings. We can advise you on whether
                 an AUP engagement is appropriate for your specific regulatory
-                needs.</p>
-                    </div>
-                </div>
+                needs.
+              </p>
+            </div>
+          </div>
 
-                <div class="faq-item bg-[#10140e] rounded-xl border border-oak-200 overflow-hidden">
-                    <button class="faq-toggle w-full flex items-center justify-between px-6 py-5 text-left text-white hover:bg-[#00a6f4] hover:text-[#10140e] transition-colors" aria-expanded="false">
-                        <span class="hover:text-[#10140e] font-semibold text-base pr-4">Who decides what procedures are performed?</span>
-                        <i data-lucide="chevron-down" class="w-5 h-5 hover:text-[#10140e    ] flex-shrink-0 faq-icon transition-transform duration-300"></i>
-                    </button>
-                    <div class="faq-content hidden px-6 pb-5">
-                        <p class="text-white leading-relaxed">The procedures are agreed upon by you (the engaging party) and
+          <div
+            class="faq-item bg-[#10140e] rounded-xl border border-oak-200 overflow-hidden"
+          >
+            <button
+              class="faq-toggle w-full flex items-center justify-between px-6 py-5 text-left text-white hover:bg-[#00a6f4] hover:text-[#10140e] transition-colors"
+              aria-expanded="false"
+            >
+              <span class="hover:text-[#10140e] font-semibold text-base pr-4"
+                >Who decides what procedures are performed?</span
+              >
+              <i
+                data-lucide="chevron-down"
+                class="w-5 h-5 hover:text-[#10140e ] flex-shrink-0 faq-icon transition-transform duration-300"
+              ></i>
+            </button>
+            <div class="faq-content hidden px-6 pb-5">
+              <p class="text-white leading-relaxed">
+                The procedures are agreed upon by you (the engaging party) and
                 the intended users of the report. We'll help you determine
                 appropriate procedures based on what you need to achieve, and
                 then we'll document the agreed scope before commencing work.
                 This ensures everyone involved understands exactly what will be
-                tested and reported.</p>
-                    </div>
-                </div>
+                tested and reported.
+              </p>
             </div>
-
-            <div class="text-center mt-10 fade-up">
-                <p class="text-[#bacada] mb-4">Have a question that's not listed here?</p>
-                <a href="#contact" class="inline-flex items-center justify-center gap-2 bg-[#00a6f4] text-[#10140e] px-8 py-3 rounded-lg font-semibold tracking-wide transition-all hover:shadow-lg hover:shadow-[#00a6f4]/50">
-                    <i data-lucide="message-circle" class="w-5 h-5"></i>
-                    Ask Us Directly
-                </a>
-            </div>
+          </div>
         </div>
+
+        <div class="text-center mt-10 fade-up">
+          <p class="text-[#bacada] mb-4">
+            Have a question that's not listed here?
+          </p>
+          <a
+            href="#contact"
+            class="inline-flex items-center justify-center gap-2 bg-[#00a6f4] text-[#10140e] px-8 py-3 rounded-lg font-semibold tracking-wide transition-all hover:shadow-lg hover:shadow-[#00a6f4]/50"
+          >
+            <i data-lucide="message-circle" class="w-5 h-5"></i>
+            Ask Us Directly
+          </a>
+        </div>
+      </div>
     </section>
 
     <!-- Related Services -->
@@ -1249,11 +1375,8 @@
           <a
             href="financial-statement-audits.html"
             class="fade-up block bg-white rounded-xl border border-oak-200 p-6 hover:border-sky-500/30 transition-all group"
-            ><i
-              data-lucide="file-search"
-              class="w-6 h-6 text-sky-500 mb-3"
-            ></i>
-            <h3 
+            ><i data-lucide="file-search" class="w-6 h-6 text-sky-500 mb-3"></i>
+            <h3
               class="text-slate-950 font-semibold text-sm group-hover:text-sky-500 transition-colors"
             >
               Financial Statement Audits
@@ -1297,118 +1420,231 @@
             >
               Audit vs Review Guide
             </h3>
-            <p class="text-slate-500 text-xs mt-1">Compare engagement types</p></a
+            <p class="text-slate-500 text-xs mt-1">
+              Compare engagement types
+            </p></a
           >
         </div>
       </div>
     </section>
 
-
     <!-- CTA Banner -->
-    <section class="py-20 bg-gradient-to-br from-oak-700 via-oak-800 to-oak-700 relative overflow-hidden">
-        <div class="absolute inset-0 opacity-10" style="background-image: url('data:image/svg+xml,%3Csvg width=&quot;60&quot; height=&quot;60&quot; viewBox=&quot;0 0 60 60&quot; xmlns=&quot;http://www.w3.org/2000/svg&quot;%3E%3Cg fill=&quot;none&quot; fill-rule=&quot;evenodd&quot;%3E%3Cg fill=&quot;%23f59e0b&quot; fill-opacity=&quot;0.3&quot;%3E%3Cpath d=&quot;M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z&quot;/%3E%3C/g%3E%3C/g%3E%3C/svg%3E');"></div>
-        
-        <div class="relative z-10 max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center fade-up">
-            <h2 class="text-3xl sm:text-4xl lg:text-5xl font-bold text-white mb-6 leading-tight">
-                Need <span class="font-serif text-sky-500">Agreed-Upon Procedures</span>?
-            </h2>
-            <p class="text-[#bacada] text-lg mb-10 max-w-2xl mx-auto">          Targeted, cost-effective verification of specific financial data. Get
+    <section
+      class="py-20 bg-gradient-to-br from-oak-700 via-oak-800 to-oak-700 relative overflow-hidden"
+    >
+      <div
+        class="absolute inset-0 opacity-10"
+        style="
+          background-image: url('data:image/svg+xml,%3Csvg width=&quot;60&quot; height=&quot;60&quot; viewBox=&quot;0 0 60 60&quot; xmlns=&quot;http://www.w3.org/2000/svg&quot;%3E%3Cg fill=&quot;none&quot; fill-rule=&quot;evenodd&quot;%3E%3Cg fill=&quot;%23f59e0b&quot; fill-opacity=&quot;0.3&quot;%3E%3Cpath d=&quot;M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z&quot;/%3E%3C/g%3E%3C/g%3E%3C/svg%3E');
+        "
+      ></div>
+
+      <div
+        class="relative z-10 max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center fade-up"
+      >
+        <h2
+          class="text-3xl sm:text-4xl lg:text-5xl font-bold text-white mb-6 leading-tight"
+        >
+          Need
+          <span class="font-serif text-sky-500">Agreed-Upon Procedures</span>?
+        </h2>
+        <p class="text-[#bacada] text-lg mb-10 max-w-2xl mx-auto">
+          Targeted, cost-effective verification of specific financial data. Get
           the independent findings you need without the cost of a full audit.
-            </p>
-            <div class="flex flex-col sm:flex-row gap-4 justify-center">
-                <a href="#contact" class="pulse-sky inline-flex items-center justify-center gap-2 bg-[#10140e] hover:bg-[#10141e] text-white px-10 py-4 rounded-lg font-bold text-lg tracking-wide transition-all hover:shadow-xl hover:shadow-black/25">
-                    <i data-lucide="file-text" class="w-5 h-5"></i>
-                    Request an Audit Proposal
-                </a>
-                <a href="#contact" class="inline-flex items-center justify-center gap-2 border-2 border-[#00a6f4] hover:border-[#10140e] text-[#00a6f4] hover:text-[#10140e] px-10 py-4 rounded-lg font-medium text-lg transition-all">
-                    <i data-lucide="calendar" class="w-5 h-5"></i>
-                    Book a Consultation
-                </a>
-            </div>
+        </p>
+        <div class="flex flex-col sm:flex-row gap-4 justify-center">
+          <a
+            href="#contact"
+            class="pulse-sky inline-flex items-center justify-center gap-2 bg-[#10140e] hover:bg-[#10141e] text-white px-10 py-4 rounded-lg font-bold text-lg tracking-wide transition-all hover:shadow-xl hover:shadow-black/25"
+          >
+            <i data-lucide="file-text" class="w-5 h-5"></i>
+            Request an Audit Proposal
+          </a>
+          <a
+            href="#contact"
+            class="inline-flex items-center justify-center gap-2 border-2 border-[#00a6f4] hover:border-[#10140e] text-[#00a6f4] hover:text-[#10140e] px-10 py-4 rounded-lg font-medium text-lg transition-all"
+          >
+            <i data-lucide="calendar" class="w-5 h-5"></i>
+            Book a Consultation
+          </a>
         </div>
+      </div>
     </section>
 
-    
-<!-- Footer -->
+    <!-- Footer -->
     <footer class="bg-[#10140e] text-white pt-16 pb-8">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-12 mb-12">
-                <div class="lg:col-span-2">
-                    <div class="flex items-center gap-3 mb-6">
-                        <div class="w-10 h-10 rounded-lg bg-[#00a6f4] flex items-center justify-center">
-                            <span class="text-oak-950 font-bold text-lg">SA</span>
-                        </div>
-                        <div>
-                            <span class="font-bold text-lg">SA Audit Limited</span>
-                            <span class="text-[#00a6f4] text-xs block tracking-widest uppercase">Chartered Accountants</span>
-                        </div>
-                    </div>
-                    <p class="text-[#bacada] leading-relaxed max-w-md mb-6">
-                        Friendly, experienced auditors based in Auckland, New Zealand. Providing quality audit, review, and assurance services for over 20 years. CA ANZ Qualified Auditors serving businesses, not-for-profits, charities, and clubs.
-                    </p>
-                    <div class="flex items-center gap-2 text-sm text-oak-300">
-                        <i data-lucide="shield-check" class="w-4 h-4 text-[#00a6f4]"></i>
-                        <span class="text-[#bacada]">Qualified Auditors of Chartered Accountants Australia and New Zealand</span>
-                    </div>
-                </div>
-                
-                <div>
-                    <h4 class="font-semibold text-white mb-4">Quick Links</h4>
-                    <ul class="space-y-3">
-                        <li><a href="about.html" class="text-[#bacada] hover:text-[#00a6f4] transition-colors text-sm">About Us</a></li>
-                        <li><a href="services.html" class="text-[#bacada] hover:text-[#00a6f4] transition-colors text-sm">Our Services</a></li>
-                        <li><a href="how-we-helped.html" class="text-[#bacada] hover:text-[#00a6f4] transition-colors text-sm">How We Helped</a></li>
-                        <li><a href="contact.html" class="text-[#bacada] hover:text-[#00a6f4] transition-colors text-sm">Contact Us</a></li>
-                        <li><a href="#faq" class="text-[#bacada] hover:text-[#00a6f4] transition-colors text-sm">FAQs</a></li>
-                    </ul>
-                </div>
-                
-                <div>
-                    <h4 class="font-semibold text-white mb-4">Industries We Work With</h4>
-                    <ul class="space-y-3">
-                        <li><a href="charities.html" class="text-[#bacada] hover:text-[#00a6f4] transition-colors text-sm">Charities</a></li>
-                        <li><a href="not-for-profit.html" class="text-[#bacada] hover:text-[#00a6f4] transition-colors text-sm">Not-for-Profit</a></li>
-                        <li><a href="trusts.html" class="text-[#bacada] hover:text-[#00a6f4] transition-colors text-sm">Trusts</a></li>
-                        <li><a href="professional-practices.html" class="text-[#bacada] hover:text-[#00a6f4] transition-colors text-sm">Professional Practices</a></li>
-                        <li><a href="smes.html" class="text-[#bacada] hover:text-[#00a6f4] transition-colors text-sm">SMEs</a></li>
-                        <li><a href="incorporated-societies.html" class="text-[#bacada]  hover:text-[#00a6f4]    transition-colors text-sm">Incorporated Societies</a></li>
-                    </ul>
-                </div>
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-12 mb-12">
+          <div class="lg:col-span-2">
+            <div class="flex items-center gap-3 mb-6">
+              <div
+                class="w-10 h-10 rounded-lg bg-[#00a6f4] flex items-center justify-center"
+              >
+                <span class="text-oak-950 font-bold text-lg">SA</span>
+              </div>
+              <div>
+                <span class="font-bold text-lg">SA Audit Limited</span>
+                <span
+                  class="text-[#00a6f4] text-xs block tracking-widest uppercase"
+                  >Chartered Accountants</span
+                >
+              </div>
             </div>
-            
-            <div class="border-t border-oak-600 pt-8">
-                <div class="flex flex-col md:flex-row items-center justify-between gap-4">
-                    <div class="text-[#bacada] text-sm">
-                        &copy; <span id="currentYear"></span> SA Audit Limited. All rights reserved.
-                    </div>
-                    <div class="text-[#bacada] text-sm">
-                        Suite 45, Royal Oak Mall, Auckland 1023
-                    </div>
-                </div>
+            <p class="text-[#bacada] leading-relaxed max-w-md mb-6">
+              Friendly, experienced auditors based in Auckland, New Zealand.
+              Providing quality audit, review, and assurance services for over
+              20 years. CA ANZ Qualified Auditors serving businesses,
+              not-for-profits, charities, and clubs.
+            </p>
+            <div class="flex items-center gap-2 text-sm text-oak-300">
+              <i data-lucide="shield-check" class="w-4 h-4 text-[#00a6f4]"></i>
+              <span class="text-[#bacada]"
+                >Qualified Auditors of Chartered Accountants Australia and New
+                Zealand</span
+              >
             </div>
+          </div>
+
+          <div>
+            <h4 class="font-semibold text-white mb-4">Quick Links</h4>
+            <ul class="space-y-3">
+              <li>
+                <a
+                  href="about.html"
+                  class="text-[#bacada] hover:text-[#00a6f4] transition-colors text-sm"
+                  >About Us</a
+                >
+              </li>
+              <li>
+                <a
+                  href="services.html"
+                  class="text-[#bacada] hover:text-[#00a6f4] transition-colors text-sm"
+                  >Our Services</a
+                >
+              </li>
+              <li>
+                <a
+                  href="how-we-helped.html"
+                  class="text-[#bacada] hover:text-[#00a6f4] transition-colors text-sm"
+                  >How We Helped</a
+                >
+              </li>
+              <li>
+                <a
+                  href="contact.html"
+                  class="text-[#bacada] hover:text-[#00a6f4] transition-colors text-sm"
+                  >Contact Us</a
+                >
+              </li>
+              <li>
+                <a
+                  href="#faq"
+                  class="text-[#bacada] hover:text-[#00a6f4] transition-colors text-sm"
+                  >FAQs</a
+                >
+              </li>
+            </ul>
+          </div>
+
+          <div>
+            <h4 class="font-semibold text-white mb-4">
+              Industries We Work With
+            </h4>
+            <ul class="space-y-3">
+              <li>
+                <a
+                  href="charities.html"
+                  class="text-[#bacada] hover:text-[#00a6f4] transition-colors text-sm"
+                  >Charities</a
+                >
+              </li>
+              <li>
+                <a
+                  href="not-for-profit.html"
+                  class="text-[#bacada] hover:text-[#00a6f4] transition-colors text-sm"
+                  >Not-for-Profit</a
+                >
+              </li>
+              <li>
+                <a
+                  href="trusts.html"
+                  class="text-[#bacada] hover:text-[#00a6f4] transition-colors text-sm"
+                  >Trusts</a
+                >
+              </li>
+              <li>
+                <a
+                  href="professional-practices.html"
+                  class="text-[#bacada] hover:text-[#00a6f4] transition-colors text-sm"
+                  >Professional Practices</a
+                >
+              </li>
+              <li>
+                <a
+                  href="smes.html"
+                  class="text-[#bacada] hover:text-[#00a6f4] transition-colors text-sm"
+                  >SMEs</a
+                >
+              </li>
+              <li>
+                <a
+                  href="incorporated-societies.html"
+                  class="text-[#bacada] hover:text-[#00a6f4] transition-colors text-sm"
+                  >Incorporated Societies</a
+                >
+              </li>
+            </ul>
+          </div>
         </div>
+
+        <div class="border-t border-oak-600 pt-8">
+          <div
+            class="flex flex-col md:flex-row items-center justify-between gap-4"
+          >
+            <div class="text-[#bacada] text-sm">
+              &copy; <span id="currentYear"></span> SA Audit Limited. All rights
+              reserved.
+            </div>
+            <div class="text-[#bacada] text-sm">
+              Suite 45, Royal Oak Mall, Auckland 1023
+            </div>
+          </div>
+        </div>
+      </div>
     </footer>
 
     <!-- Spacer for mobile sticky bar -->
     <div class="lg:hidden h-16"></div>
 
     <!-- Sticky Get a Quote — Desktop -->
-    <a href="#contact" class="hidden lg:flex fixed bottom-6 left-6 z-40 items-center gap-2 bg-[#10140e] hover:bg-[#10141e] text-white border-2 border-white px-6 py-3.5 rounded-full font-bold text-sm tracking-wide transition-all shadow-lg hover:shadow-xl pulse-sky">
-        <i data-lucide="file-text" class="w-5 h-5"></i>
-        Get a Quote
+    <a
+      href="#contact"
+      class="hidden lg:flex fixed bottom-6 left-6 z-40 items-center gap-2 bg-[#10140e] hover:bg-[#10141e] text-white border-2 border-white px-6 py-3.5 rounded-full font-bold text-sm tracking-wide transition-all shadow-lg hover:shadow-xl pulse-sky"
+    >
+      <i data-lucide="file-text" class="w-5 h-5"></i>
+      Get a Quote
     </a>
 
-        <!-- Sticky Get a Quote — Mobile -->
-    <div class="lg:hidden fixed bottom-0 left-0 right-0 z-40 bg-white/95 backdrop-blur-sm border-t border-oak-200 shadow-lg p-3">
-        <a href="#contact" class="flex items-center justify-center gap-2 bg-slate-950 hover:bg-sky-500 text-white px-6 py-3 rounded-lg font-bold text-sm tracking-wide transition-all w-full">
-            <i data-lucide="file-text" class="w-5 h-5"></i>
-            Get a Quote
-        </a>
+    <!-- Sticky Get a Quote — Mobile -->
+    <div
+      class="lg:hidden fixed bottom-0 left-0 right-0 z-40 bg-white/95 backdrop-blur-sm border-t border-oak-200 shadow-lg p-3"
+    >
+      <a
+        href="#contact"
+        class="flex items-center justify-center gap-2 bg-slate-950 hover:bg-sky-500 text-white px-6 py-3 rounded-lg font-bold text-sm tracking-wide transition-all w-full"
+      >
+        <i data-lucide="file-text" class="w-5 h-5"></i>
+        Get a Quote
+      </a>
     </div>
 
     <!-- Back to top button -->
-    <button id="backToTop" class="fixed bottom-20 right-6 lg:bottom-6 z-40 w-12 h-12 bg-[#10140e]  text-white border-2 border-white hover:border-[#10140e] rounded-full shadow-lg transition-all duration-300 opacity-0 invisible flex items-center justify-center" aria-label="Back to top">
-        <i data-lucide="arrow-up" class="w-5 h-5"></i>
+    <button
+      id="backToTop"
+      class="fixed bottom-20 right-6 lg:bottom-6 z-40 w-12 h-12 bg-[#10140e] text-white border-2 border-white hover:border-[#10140e] rounded-full shadow-lg transition-all duration-300 opacity-0 invisible flex items-center justify-center"
+      aria-label="Back to top"
+    >
+      <i data-lucide="arrow-up" class="w-5 h-5"></i>
     </button>
 
     <script src="https://unpkg.com/lucide@latest"></script>
@@ -1433,23 +1669,41 @@
           document.body.style.overflow = "";
         }),
       );
-      const mobileServicesBtn = document.getElementById("mobileServicesBtn");
-      const mobileServicesDropdown = document.getElementById(
-        "mobileServicesDropdown",
-      );
-      const mobileServicesChevron = document.getElementById(
-        "mobileServicesChevron",
-      );
-      if (mobileServicesBtn) {
-        mobileServicesBtn.addEventListener("click", () => {
-          mobileServicesDropdown.classList.toggle("open");
-          if (mobileServicesChevron)
-            mobileServicesChevron.style.transform =
-              mobileServicesDropdown.classList.contains("open")
-                ? "rotate(180deg)"
-                : "";
-        });
-      }
+
+      // Mobile Dropdowns - Event Delegation
+      mobileMenu.addEventListener("click", function (e) {
+        const button = e.target.closest(
+          "#mobileServicesBtn, #mobileIndustriesBtn, #mobileBlogsBtn",
+        );
+
+        if (!button) return;
+
+        e.preventDefault();
+        e.stopPropagation();
+
+        const dropdownMap = {
+          mobileServicesBtn: "mobileServicesDropdown",
+          mobileIndustriesBtn: "mobileIndustriesDropdown",
+          mobileBlogsBtn: "mobileBlogsDropdown",
+        };
+
+        const dropdownId = dropdownMap[button.id];
+        const dropdown = document.getElementById(dropdownId);
+        const chevron = button.querySelector("i");
+
+        if (!dropdown) return;
+
+        dropdown.classList.toggle("open");
+
+        const isOpen = dropdown.classList.contains("open");
+
+        button.setAttribute("aria-expanded", isOpen);
+
+        if (chevron) {
+          chevron.style.transform = isOpen ? "rotate(180deg)" : "rotate(0deg)";
+        }
+      });
+
       const fadeElements = document.querySelectorAll(".fade-up");
       const fadeObserver = new IntersectionObserver(
         (entries) => {
