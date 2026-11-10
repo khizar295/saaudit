@@ -203,14 +203,39 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
         }
 
         /* Mobile dropdown */
-        .mobile-dropdown-content {
-            max-height: 0;
-            overflow: hidden;
-            transition: max-height 0.3s ease;
-        }
-        .mobile-dropdown-content.open {
-            max-height: 1000px;
-        }
+        
+.mobile-dropdown-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 12px;
+    width: 100%;
+    max-height: 0;
+    overflow: hidden;
+    opacity: 0;
+    visibility: hidden;
+    transition: max-height 0.35s ease, opacity 0.25s ease;
+}
+
+.mobile-dropdown-content.open {
+    max-height: 600px;
+    opacity: 1;
+    visibility: visible;
+    overflow-y: auto;
+    padding: 12px 0;
+    flex-shrink: 0;
+}
+
+.mobile-dropdown-content a {
+    display: block;
+    width: 100%;
+    text-align: center;
+    padding: 8px 12px;
+    font-size: 17px;
+    color: #10141e;
+    cursor: pointer;
+}
+
 
         .mobile-menu {
             transform: translateX(100%);
@@ -494,7 +519,7 @@ body {
                 <i data-lucide="x" class="w-6 h-6"></i>
             </button>
         </div>
-        <div class="flex flex-col items-center justify-start flex-1 gap-6 overflow-y-auto py-6">
+        <div class="flex flex-col items-center justify-start flex-1 min-h-0 gap-6 overflow-y-auto py-6 w-full">
             <a href="#about" class="mobile-nav-link text[#10141e] text-2xl font-light tracking-wide hover:text-[#00a6f4]">About</a>
             <button id="mobileServicesBtn" class="text-[#10141e] text-2xl font-light tracking-wide hover:text-[#00a6f4] inline-flex items-center gap-2">
                 Services <i data-lucide="chevron-down" class="w-5 h-5 transition-transform" id="mobileServicesChevron"></i>
@@ -1690,44 +1715,44 @@ body {
             });
         });
 
-        // Mobile Services Dropdown
-        const mobileServicesBtn = document.getElementById('mobileServicesBtn');
-        const mobileServicesDropdown = document.getElementById('mobileServicesDropdown');
-        const mobileServicesChevron = document.getElementById('mobileServicesChevron');
-        if (mobileServicesBtn) {
-            mobileServicesBtn.addEventListener('click', () => {
-                mobileServicesDropdown.classList.toggle('open');
-                if (mobileServicesChevron) {
-                    mobileServicesChevron.style.transform = mobileServicesDropdown.classList.contains('open') ? 'rotate(180deg)' : '';
-                }
-            });
-        }
+        // Mobile Services, industries, blogs Dropdown
+        
+// Mobile Dropdowns - Event Delegation
+mobileMenu.addEventListener('click', function (e) {
+    const button = e.target.closest(
+        '#mobileServicesBtn, #mobileIndustriesBtn, #mobileBlogsBtn'
+    );
 
-        // Mobile Industries Dropdown
-        const mobileIndustriesBtn = document.getElementById('mobileIndustriesBtn');
-        const mobileIndustriesDropdown = document.getElementById('mobileIndustriesDropdown');
-        const mobileIndustriesChevron = document.getElementById('mobileIndustriesChevron');
-        if (mobileIndustriesBtn) {
-            mobileIndustriesBtn.addEventListener('click', () => {
-                mobileIndustriesDropdown.classList.toggle('open');
-                if (mobileIndustriesChevron) {
-                    mobileIndustriesChevron.style.transform = mobileIndustriesDropdown.classList.contains('open') ? 'rotate(180deg)' : '';
-                }
-            });
-        }
+    if (!button) return;
 
-        // Mobile Blogs Dropdown
-        const mobileBlogsBtn = document.getElementById('mobileBlogsBtn');
-        const mobileBlogsDropdown = document.getElementById('mobileBlogsDropdown');
-        const mobileBlogsChevron = document.getElementById('mobileBlogsChevron');
-        if (mobileBlogsBtn) {
-            mobileBlogsBtn.addEventListener('click', () => {
-                mobileBlogsDropdown.classList.toggle('open');
-                if (mobileBlogsChevron) {
-                    mobileBlogsChevron.style.transform = mobileBlogsDropdown.classList.contains('open') ? 'rotate(180deg)' : '';
-                }
-            });
-        }
+    e.preventDefault();
+    e.stopPropagation();
+
+    const dropdownMap = {
+        mobileServicesBtn: 'mobileServicesDropdown',
+        mobileIndustriesBtn: 'mobileIndustriesDropdown',
+        mobileBlogsBtn: 'mobileBlogsDropdown'
+    };
+
+    const dropdownId = dropdownMap[button.id];
+    const dropdown = document.getElementById(dropdownId);
+    const chevron = button.querySelector('i');
+
+    if (!dropdown) return;
+
+    dropdown.classList.toggle('open');
+
+    const isOpen = dropdown.classList.contains('open');
+
+    button.setAttribute('aria-expanded', isOpen);
+
+    if (chevron) {
+        chevron.style.transform = isOpen
+            ? 'rotate(180deg)'
+            : 'rotate(0deg)';
+    }
+});
+
 
         // Smooth scroll for anchor links
         document.querySelectorAll('a[href^="#"]').forEach(anchor => {
