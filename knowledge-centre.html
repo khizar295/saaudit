@@ -129,15 +129,15 @@
         position: relative;
       }
       .nav-link::after {
-            content: '';
-            position: absolute;
-            bottom: -2px;
-            left: 0;
-            width: 0;
-            height: 2px;
-            background: #10141e;
-            transition: width 0.3s ease;
-        }
+        content: "";
+        position: absolute;
+        bottom: -2px;
+        left: 0;
+        width: 0;
+        height: 2px;
+        background: #10141e;
+        transition: width 0.3s ease;
+      }
       .nav-link:hover::after {
         width: 100%;
       }
@@ -166,50 +166,52 @@
         transform: translateY(0);
       }
       .nav-dropdown-menu a {
-            display: flex;
-            align-items: center;
-            gap: 0.5rem;
-            padding: 0.625rem 1.25rem;
-            font-size: 0.875rem;
-            color: #10141e;
-            transition: all 0.15s ease;
-        }
-        .nav-dropdown-menu a:hover {
-            background: #10141e;
-            color: #00a6f4;
-        }
-      
-.mobile-dropdown-content {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 12px;
-    width: 100%;
-    max-height: 0;
-    overflow: hidden;
-    opacity: 0;
-    visibility: hidden;
-    transition: max-height 0.35s ease, opacity 0.25s ease;
-}
+        display: flex;
+        align-items: center;
+        gap: 0.5rem;
+        padding: 0.625rem 1.25rem;
+        font-size: 0.875rem;
+        color: #10141e;
+        transition: all 0.15s ease;
+      }
+      .nav-dropdown-menu a:hover {
+        background: #10141e;
+        color: #00a6f4;
+      }
 
-.mobile-dropdown-content.open {
-    max-height: 600px;
-    opacity: 1;
-    visibility: visible;
-    overflow-y: auto;
-    padding: 12px 0;
-    flex-shrink: 0;
-}
+      .mobile-dropdown-content {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 12px;
+        width: 100%;
+        max-height: 0;
+        overflow: hidden;
+        opacity: 0;
+        visibility: hidden;
+        transition:
+          max-height 0.35s ease,
+          opacity 0.25s ease;
+      }
 
-.mobile-dropdown-content a {
-    display: block;
-    width: 100%;
-    text-align: center;
-    padding: 8px 12px;
-    font-size: 17px;
-    color: #10141e;
-    cursor: pointer;
-}
+      .mobile-dropdown-content.open {
+        max-height: 600px;
+        opacity: 1;
+        visibility: visible;
+        overflow-y: auto;
+        padding: 12px 0;
+        flex-shrink: 0;
+      }
+
+      .mobile-dropdown-content a {
+        display: block;
+        width: 100%;
+        text-align: center;
+        padding: 8px 12px;
+        font-size: 17px;
+        color: #10141e;
+        cursor: pointer;
+      }
 
       .mobile-menu {
         transform: translateX(100%);
@@ -230,44 +232,44 @@
         transition: all 0.2s ease;
       }
       .filter-pill.active {
-        background: #f59e0b;
-        color: #0a1929;
-        border-color: #f59e0b;
+        background: #10140e;
+        color: white;
+        border-color: #10140e;
       }
       ::-webkit-scrollbar {
-    width: 8px;
-}
+        width: 8px;
+      }
 
-::-webkit-scrollbar-track {
-    background: #f0f4f8;
-}
+      ::-webkit-scrollbar-track {
+        background: #f0f4f8;
+      }
 
-::-webkit-scrollbar-thumb {
-    background: #020617;
-    border-radius: 4px;
-}
+      ::-webkit-scrollbar-thumb {
+        background: #020617;
+        border-radius: 4px;
+      }
 
-::-webkit-scrollbar-thumb:hover {
-    background: #020617;
-}
+      ::-webkit-scrollbar-thumb:hover {
+        background: #020617;
+      }
 
-* {
-    scrollbar-color: #020617 #f0f4f8;
-    scrollbar-width: thin;
-}
-html,
-body {
-    width: 100%;
-    max-width: 100%;
-    overflow-x: clip;
-}
+      * {
+        scrollbar-color: #020617 #f0f4f8;
+        scrollbar-width: thin;
+      }
+      html,
+      body {
+        width: 100%;
+        max-width: 100%;
+        overflow-x: clip;
+      }
 
-#mobileMenu {
-    width: 100%;
-    max-width: 100vw;
-    overflow-x: hidden;
-    box-sizing: border-box;
-}
+      #mobileMenu {
+        width: 100%;
+        max-width: 100vw;
+        overflow-x: hidden;
+        box-sizing: border-box;
+      }
     </style>
   </head>
   <body class="bg-white text-oak-900 overflow-x-hidden">
@@ -278,7 +280,7 @@ body {
     >
       <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div class="flex items-center justify-between h-20">
-          <a href="#home" class="flex items-center gap-3 group">
+          <a href="index.html" class="flex items-center gap-3 group">
             <div
               class="w-10 h-10 rounded-lg bg-[#10141e] flex items-center justify-center group-hover:bg-[#10142e] transition-colors"
             >
@@ -298,32 +300,32 @@ body {
 
           <div class="hidden lg:flex items-center gap-6">
             <a
-              href="#about"
+              href="about.html"
               class="nav-link text-[#10141e] hover:text-[#00a6f4] text-sm font-medium tracking-wide transition-colors"
               >About</a
             >
             <div class="nav-dropdown">
               <a
-                href="#services"
+                href="services.html"
                 class="nav-link text-[#10141e] hover:text-[#00a6f4] text-sm font-medium tracking-wide transition-colors inline-flex items-center gap-1"
               >
                 Services
                 <i data-lucide="chevron-down" class="w-3.5 h-3.5"></i>
               </a>
               <div class="nav-dropdown-menu">
-                <a href="services.html"
+                <a href="financial-statement-audits.html"
                   ><i data-lucide="file-search" class="w-4 h-4"></i> Financial
                   Audits</a
                 >
-                <a href="services.html"
+                <a href="assurance-reviews.html"
                   ><i data-lucide="scan-search" class="w-4 h-4"></i> Review
                   Engagements</a
                 >
-                <a href="services.html"
+                <a href="agreed-upon-procedures.html"
                   ><i data-lucide="clipboard-check" class="w-4 h-4"></i>
                   Agreed-Upon Procedures</a
                 >
-                <a href="services.html"
+                <a href="charity-audits.html"
                   ><i data-lucide="settings" class="w-4 h-4"></i> Related
                   Services</a
                 >
@@ -400,22 +402,22 @@ body {
               </div>
             </div>
             <a
-              href="#why-us"
+              href="index.html#why-us"
               class="nav-link text-[#10141e] hover:text-[#00a6f4] text-sm font-medium tracking-wide transition-colors"
               >Why Us</a
             >
             <a
-              href="#team"
+              href="index.html#team"
               class="nav-link text-[#10141e] hover:text-[#00a6f4] text-sm font-medium tracking-wide transition-colors"
               >Team</a
             >
             <a
-              href="#contact"
+              href="contact.html"
               class="nav-link text-[#10141e] hover:text-[#00a6f4] text-sm font-medium tracking-wide transition-colors"
               >Contact</a
             >
             <a
-              href="#contact"
+              href="index.html#contact"
               class="ml-2 bg-[#10141e] hover:bg-[#10142e] text-white px-5 py-2.5 rounded-lg font-semibold text-sm tracking-wide transition-all hover:shadow-lg hover:shadow-black/25"
             >
               Request an Audit Proposal
@@ -439,7 +441,7 @@ body {
       class="mobile-menu fixed inset-0 z-[60] bg-white flex flex-col"
     >
       <div class="flex items-center justify-between px-4 sm:px-6 h-20">
-        <a href="#home" class="flex items-center gap-3">
+        <a href="index.html" class="flex items-center gap-3">
           <div
             class="w-10 h-10 rounded-lg bg-[#10141e] flex items-center justify-center"
           >
@@ -464,7 +466,7 @@ body {
         class="flex flex-col items-center justify-start flex-1 min-h-0 gap-6 overflow-y-auto py-6 w-full"
       >
         <a
-          href="#about"
+          href="about.html"
           class="mobile-nav-link text[#10141e] text-2xl font-light tracking-wide hover:text-[#00a6f4]"
           >About</a
         >
@@ -484,22 +486,22 @@ body {
           class="mobile-dropdown-content flex flex-col items-center gap-3"
         >
           <a
-            href="services.html"
+            href="financial-statement-audits.html"
             class="text[#10141e] text-lg hover:text-[#00a6f4] transition-colors"
             >Financial Audits</a
           >
           <a
-            href="services.html"
+            href="assurance-reviews.html"
             class="text[#10141e] text-lg hover:text-[#00a6f4] transition-colors"
             >Review Engagements</a
           >
           <a
-            href="services.html"
+            href="agreed-upon-procedures.html"
             class="text[#10141e] text-lg hover:text-[#00a6f4] transition-colors"
             >Agreed-Upon Procedures</a
           >
           <a
-            href="services.html"
+            href="charity-audits.html"
             class="text[#10141e] text-lg hover:text-[#00a6f4] transition-colors"
             >Related Services</a
           >
@@ -605,29 +607,29 @@ body {
           >
         </div>
         <a
-          href="#why-us"
+          href="index.html#why-us"
           class="mobile-nav-link text-[#10141e] text-2xl font-light tracking-wide hover:text-[#00a6f4]"
           >Why Us</a
         >
         <a
-          href="#team"
+          href="index.html#team"
           class="mobile-nav-link text-[#10141e] text-2xl font-light tracking-wide hover:text-[#00a6f4]"
           >Team</a
         >
         <a
-          href="#contact"
+          href="contact.html"
           class="mobile-nav-link text-[#10141e] text-2xl font-light tracking-wide hover:text-[#00a6f4]"
           >Contact</a
         >
         <div class="flex flex-col gap-3 mt-4">
           <a
-            href="#contact"
+            href="index.html#contact"
             class="bg-[#10141e] hover:bg-[#10142e] text-white px-8 py-3 rounded-lg font-semibold text-lg tracking-wide transition-all text-center"
           >
             Request an Audit Proposal
           </a>
           <a
-            href="#contact"
+            href="index.html#contact"
             class="border-2 border-[#00a6f4] text-[#00a6f4] hover:text-slate-950 hover:border-slate-950 px-8 py-3 rounded-lg font-medium text-lg tracking-wide transition-all text-center"
           >
             Book a Consultation
@@ -642,12 +644,16 @@ body {
         <nav class="fade-up" aria-label="Breadcrumb">
           <ol class="flex flex-wrap items-center gap-2 text-sm text-oak-500">
             <li>
-              <a href="index.html" class="hover:text-gold-600 transition-colors"
+              <a
+                href="index.html"
+                class="text-slate-950 hover:text-sky-500 transition-colors"
                 >Home</a
               >
             </li>
-            <li><i data-lucide="chevron-right" class="w-4 h-4"></i></li>
-            <li class="text-gold-600 font-medium">Knowledge Centre</li>
+            <li>
+              <i data-lucide="chevron-right" class="w-4 h-4 text-slate-950"></i>
+            </li>
+            <li class="text-sky-500 font-medium">Knowledge Centre</li>
           </ol>
         </nav>
       </div>
@@ -655,33 +661,33 @@ body {
 
     <!-- Hero -->
     <section
-      class="pb-16 bg-gradient-to-br from-oak-50 via-white to-gold-50 relative overflow-hidden"
+      class="pt-10 pb-16 bg-gradient-to-br from-slate-200 via-white to-sky-100 relative overflow-hidden"
     >
       <div
-        class="absolute top-10 right-10 w-72 h-72 bg-gold-500/10 rounded-full blur-3xl"
+        class="absolute top-10 right-10 w-72 h-72 bg-sky-100 rounded-full blur-3xl"
       ></div>
       <div
-        class="absolute bottom-10 left-10 w-96 h-96 bg-oak-200/30 rounded-full blur-3xl"
+        class="absolute bottom-10 left-10 w-96 h-96 bg-slate-200 rounded-full blur-3xl"
       ></div>
       <div class="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div class="max-w-4xl mx-auto text-center">
           <div class="fade-up">
             <div
-              class="inline-flex items-center gap-2 bg-gold-500/10 border border-gold-500/30 rounded-full px-4 py-1.5 mb-8"
+              class="inline-flex items-center gap-2 bg-slate-950 rounded-full px-4 py-1.5 mb-8"
             >
-              <i data-lucide="book-open" class="w-4 h-4 text-gold-500"></i>
-              <span class="text-gold-700 text-sm font-medium tracking-wide"
+              <i data-lucide="book-open" class="w-4 h-4 text-white"></i>
+              <span class="text-white text-sm font-medium tracking-wide"
                 >Audit Resources & Guides</span
               >
             </div>
           </div>
           <h1
-            class="fade-up text-3xl sm:text-4xl lg:text-5xl font-bold text-oak-800 leading-tight mb-6"
+            class="fade-up text-3xl sm:text-4xl lg:text-5xl font-bold text-slate-950 leading-tight mb-6"
           >
-            Knowledge <span class="font-serif text-gold-600">Centre</span>
+            Knowledge <span class="font-serif text-sky-500">Centre</span>
           </h1>
           <p
-            class="fade-up text-lg text-oak-600 leading-relaxed mb-8 max-w-2xl mx-auto"
+            class="fade-up text-lg text-slate-950 leading-relaxed mb-8 max-w-2xl mx-auto"
           >
             Expert guides and articles to help you understand audits, reviews,
             compliance obligations, and NZ reporting standards. Written by CA
@@ -703,35 +709,36 @@ body {
               <img
                 src="http://static.photos/office/640x360/88"
                 alt="Featured article: What is an Audit complete guide for NZ organisations by SA Audit Limited Auckland"
-                class="w-full h-full object-cover"
+                class="w-full h-full object-cover border-r-2 border-white"
                 loading="lazy"
                 width="640"
                 height="360"
                 decoding="async"
               />
               <div
-                class="absolute top-4 left-4 bg-gold-500 text-oak-950 text-xs font-bold px-3 py-1.5 rounded-full uppercase tracking-wider"
+                class="absolute top-4 left-4 bg-slate-950 text-white text-xs font-bold px-3 py-1.5 rounded-full uppercase tracking-wider"
               >
                 Featured
               </div>
             </div>
-            <div class="p-8 lg:p-12 flex flex-col justify-center">
+            <div class="p-8 lg:p-12 flex flex-col justify-center bg-slate-950">
               <div class="flex items-center gap-3 mb-4">
                 <span
-                  class="bg-oak-50 text-oak-600 text-xs font-medium px-3 py-1 rounded-full"
+                  class="bg-black text-white border border-white text-xs font-medium px-3 py-1 rounded-full"
                   >Audit Basics</span
                 >
-                <span class="text-oak-400 text-xs flex items-center gap-1"
+                <span
+                  class="text-white bg-sky-500/20 border border-sky-300 p-1 rounded-full px-2 text-xs flex items-center gap-1"
                   ><i data-lucide="clock" class="w-3.5 h-3.5"></i> 8 min
                   read</span
                 >
               </div>
               <h2
-                class="text-2xl lg:text-3xl font-bold text-oak-800 mb-4 group-hover:text-gold-600 transition-colors"
+                class="text-2xl lg:text-3xl font-bold text-white mb-4 group-hover:text-sky-500 transition-colors"
               >
                 What is an Audit? A Complete Guide for NZ Organisations
               </h2>
-              <p class="text-oak-500 leading-relaxed mb-6">
+              <p class="text-white/80 leading-relaxed mb-6">
                 An audit is an independent examination of your financial
                 statements conducted by a qualified auditor. This guide explains
                 what an audit involves, why it matters, and what to expect
@@ -739,7 +746,7 @@ body {
                 community organisation in New Zealand.
               </p>
               <div
-                class="flex items-center gap-2 text-gold-600 font-semibold text-sm group-hover:gap-3 transition-all"
+                class="flex items-center gap-2 text-sky-500 font-semibold text-sm group-hover:gap-3 transition-all"
               >
                 Read the full article
                 <i data-lucide="arrow-right" class="w-4 h-4"></i>
@@ -756,31 +763,31 @@ body {
         <!-- Category Filters -->
         <div class="flex flex-wrap justify-center gap-3 mb-12 fade-up">
           <button
-            class="filter-pill active bg-white border-2 border-oak-200 text-oak-600 px-5 py-2 rounded-full text-sm font-medium"
+            class="filter-pill active bg-white border-2 border-slate-950 text-slate-950 px-5 py-2 rounded-full text-sm font-medium"
             data-filter="all"
           >
             All Articles
           </button>
           <button
-            class="filter-pill bg-white border-2 border-oak-200 text-oak-600 px-5 py-2 rounded-full text-sm font-medium"
+            class="filter-pill bg-white border-2 border-slate-950 text-slate-950 px-5 py-2 rounded-full text-sm font-medium"
             data-filter="basics"
           >
             Audit Basics
           </button>
           <button
-            class="filter-pill bg-white border-2 border-oak-200 text-oak-600 px-5 py-2 rounded-full text-sm font-medium"
+            class="filter-pill bg-white border-2 border-slate-950 text-slate-950 px-5 py-2 rounded-full text-sm font-medium"
             data-filter="compliance"
           >
             Compliance
           </button>
           <button
-            class="filter-pill bg-white border-2 border-oak-200 text-oak-600 px-5 py-2 rounded-full text-sm font-medium"
+            class="filter-pill bg-white border-2 border-slate-950 text-slate-950 px-5 py-2 rounded-full text-sm font-medium"
             data-filter="preparation"
           >
             Preparation
           </button>
           <button
-            class="filter-pill bg-white border-2 border-oak-200 text-oak-600 px-5 py-2 rounded-full text-sm font-medium"
+            class="filter-pill bg-white border-2 border-slate-950 text-slate-950 px-5 py-2 rounded-full text-sm font-medium"
             data-filter="insights"
           >
             Insights
@@ -805,26 +812,26 @@ body {
                 decoding="async"
               />
               <div
-                class="absolute top-3 left-3 bg-gold-500 text-oak-950 text-xs font-bold px-3 py-1 rounded-full"
+                class="absolute top-3 left-3 bg-slate-950 text-white text-xs font-bold px-3 py-1 rounded-full"
               >
                 Audit Basics
               </div>
             </div>
-            <div class="p-6">
-              <div class="flex items-center gap-2 text-oak-400 text-xs mb-3">
+            <div class="p-6 bg-slate-950">
+              <div class="flex items-center gap-2 text-sky-500 text-xs mb-3">
                 <i data-lucide="clock" class="w-3.5 h-3.5"></i> 8 min read
               </div>
               <h3
-                class="text-lg font-bold text-oak-800 mb-3 group-hover:text-gold-600 transition-colors leading-snug"
+                class="text-lg font-bold text-white mb-3 group-hover:text-sky-500 transition-colors leading-snug"
               >
                 What is an Audit? A Complete Guide for NZ Organisations
               </h3>
-              <p class="text-oak-500 text-sm leading-relaxed mb-4">
+              <p class="text-white/80 text-sm leading-relaxed mb-4">
                 Understand what an audit involves, why it matters, and what to
                 expect throughout the process.
               </p>
               <div
-                class="flex items-center gap-2 text-gold-600 font-semibold text-sm group-hover:gap-3 transition-all"
+                class="flex items-center gap-2 text-sky-500 font-semibold text-sm group-hover:gap-3 transition-all"
               >
                 Read more <i data-lucide="arrow-right" class="w-4 h-4"></i>
               </div>
@@ -835,7 +842,7 @@ body {
           <a
             href="audit-vs-review.html"
             data-category="basics"
-            class="article-card fade-up block bg-white rounded-2xl border border-oak-200 overflow-hidden group"
+            class="article-card fade-up block bg-white rounded-2xl border border-slate-950 overflow-hidden group"
           >
             <div class="relative h-48">
               <img
@@ -848,26 +855,26 @@ body {
                 decoding="async"
               />
               <div
-                class="absolute top-3 left-3 bg-gold-500 text-oak-950 text-xs font-bold px-3 py-1 rounded-full"
+                class="absolute top-3 left-3 bg-slate-950 text-white text-xs font-bold px-3 py-1 rounded-full"
               >
                 Audit Basics
               </div>
             </div>
-            <div class="p-6">
-              <div class="flex items-center gap-2 text-oak-400 text-xs mb-3">
+            <div class="p-6 bg-slate-950 h-full">
+              <div class="flex items-center gap-2 text-sky-500 text-xs mb-3">
                 <i data-lucide="clock" class="w-3.5 h-3.5"></i> 7 min read
               </div>
               <h3
-                class="text-lg font-bold text-oak-800 mb-3 group-hover:text-gold-600 transition-colors leading-snug"
+                class="text-lg font-bold text-white mb-3 group-hover:text-sky-500 transition-colors leading-snug"
               >
                 Audit vs Review: Which Does Your Organisation Need?
               </h3>
-              <p class="text-oak-500 text-sm leading-relaxed mb-4">
+              <p class="text-white/80 text-sm leading-relaxed mb-4">
                 Understand the key differences between an audit and a review,
                 and when each is appropriate.
               </p>
               <div
-                class="flex items-center gap-2 text-gold-600 font-semibold text-sm group-hover:gap-3 transition-all"
+                class="flex items-center gap-2 text-sky-500 font-semibold text-sm group-hover:gap-3 transition-all"
               >
                 Read more <i data-lucide="arrow-right" class="w-4 h-4"></i>
               </div>
@@ -878,7 +885,7 @@ body {
           <a
             href="charity-audit-requirements-nz.html"
             data-category="compliance"
-            class="article-card fade-up block bg-white rounded-2xl border border-oak-200 overflow-hidden group"
+            class="article-card fade-up block bg-white rounded-2xl border border-slate-950 overflow-hidden group"
           >
             <div class="relative h-48">
               <img
@@ -891,26 +898,26 @@ body {
                 decoding="async"
               />
               <div
-                class="absolute top-3 left-3 bg-gold-500 text-oak-950 text-xs font-bold px-3 py-1 rounded-full"
+                class="absolute top-3 left-3 bg-slate-950 text-white text-xs font-bold px-3 py-1 rounded-full"
               >
                 Compliance
               </div>
             </div>
-            <div class="p-6">
-              <div class="flex items-center gap-2 text-oak-400 text-xs mb-3">
+            <div class="p-6 bg-slate-950 h-full">
+              <div class="flex items-center gap-2 text-sky-500 text-xs mb-3">
                 <i data-lucide="clock" class="w-3.5 h-3.5"></i> 10 min read
               </div>
               <h3
-                class="text-lg font-bold text-oak-800 mb-3 group-hover:text-gold-600 transition-colors leading-snug"
+                class="text-lg font-bold text-white mb-3 group-hover:text-sky-500 transition-colors leading-snug"
               >
                 Charity Audit Requirements in NZ: A Complete Guide
               </h3>
-              <p class="text-oak-500 text-sm leading-relaxed mb-4">
+              <p class="text-white/80 text-sm leading-relaxed mb-4">
                 Everything charities need to know about audit obligations under
                 the Charities Act 2005.
               </p>
               <div
-                class="flex items-center gap-2 text-gold-600 font-semibold text-sm group-hover:gap-3 transition-all"
+                class="flex items-center gap-2 text-sky-500 font-semibold text-sm group-hover:gap-3 transition-all"
               >
                 Read more <i data-lucide="arrow-right" class="w-4 h-4"></i>
               </div>
@@ -921,7 +928,7 @@ body {
           <a
             href="trust-audit-requirements.html"
             data-category="compliance"
-            class="article-card fade-up block bg-white rounded-2xl border border-oak-200 overflow-hidden group"
+            class="article-card fade-up block bg-white rounded-2xl border border-slate-950 overflow-hidden group"
           >
             <div class="relative h-48">
               <img
@@ -934,26 +941,26 @@ body {
                 decoding="async"
               />
               <div
-                class="absolute top-3 left-3 bg-gold-500 text-oak-950 text-xs font-bold px-3 py-1 rounded-full"
+                class="absolute top-3 left-3 bg-slate-950 text-white text-xs font-bold px-3 py-1 rounded-full"
               >
                 Compliance
               </div>
             </div>
-            <div class="p-6">
-              <div class="flex items-center gap-2 text-oak-400 text-xs mb-3">
+            <div class="p-6 bg-slate-950">
+              <div class="flex items-center gap-2 text-sky-500 text-xs mb-3">
                 <i data-lucide="clock" class="w-3.5 h-3.5"></i> 8 min read
               </div>
               <h3
-                class="text-lg font-bold text-oak-800 mb-3 group-hover:text-gold-600 transition-colors leading-snug"
+                class="text-lg font-bold text-white mb-3 group-hover:text-sky-500 transition-colors leading-snug"
               >
                 Trust Audit Requirements in New Zealand
               </h3>
-              <p class="text-oak-500 text-sm leading-relaxed mb-4">
+              <p class="text-white/80 text-sm leading-relaxed mb-4">
                 When do trusts need an audit? Understand requirements for
                 family, charitable, and Māori trusts.
               </p>
               <div
-                class="flex items-center gap-2 text-gold-600 font-semibold text-sm group-hover:gap-3 transition-all"
+                class="flex items-center gap-2 text-sky-500 font-semibold text-sm group-hover:gap-3 transition-all"
               >
                 Read more <i data-lucide="arrow-right" class="w-4 h-4"></i>
               </div>
@@ -964,7 +971,7 @@ body {
           <a
             href="preparing-for-your-audit.html"
             data-category="preparation"
-            class="article-card fade-up block bg-white rounded-2xl border border-oak-200 overflow-hidden group"
+            class="article-card fade-up block bg-white rounded-2xl border border-slate-950 overflow-hidden group"
           >
             <div class="relative h-48">
               <img
@@ -977,26 +984,26 @@ body {
                 decoding="async"
               />
               <div
-                class="absolute top-3 left-3 bg-gold-500 text-oak-950 text-xs font-bold px-3 py-1 rounded-full"
+                class="absolute top-3 left-3 bg-slate-950 text-white text-xs font-bold px-3 py-1 rounded-full"
               >
                 Preparation
               </div>
             </div>
-            <div class="p-6">
-              <div class="flex items-center gap-2 text-oak-400 text-xs mb-3">
+            <div class="p-6 bg-slate-950 h-full">
+              <div class="flex items-center gap-2 text-sky-500 text-xs mb-3">
                 <i data-lucide="clock" class="w-3.5 h-3.5"></i> 9 min read
               </div>
               <h3
-                class="text-lg font-bold text-oak-800 mb-3 group-hover:text-gold-600 transition-colors leading-snug"
+                class="text-lg font-bold text-white mb-3 group-hover:text-sky-500 transition-colors leading-snug"
               >
                 Preparing for Your Audit: A Practical Checklist
               </h3>
-              <p class="text-oak-500 text-sm leading-relaxed mb-4">
+              <p class="text-white/80 text-sm leading-relaxed mb-4">
                 A step-by-step guide to preparing for a smooth, efficient audit
                 — with a downloadable checklist.
               </p>
               <div
-                class="flex items-center gap-2 text-gold-600 font-semibold text-sm group-hover:gap-3 transition-all"
+                class="flex items-center gap-2 text-sky-500 font-semibold text-sm group-hover:gap-3 transition-all"
               >
                 Read more <i data-lucide="arrow-right" class="w-4 h-4"></i>
               </div>
@@ -1007,7 +1014,7 @@ body {
           <a
             href="common-audit-findings.html"
             data-category="insights"
-            class="article-card fade-up block bg-white rounded-2xl border border-oak-200 overflow-hidden group"
+            class="article-card fade-up block bg-white rounded-2xl border border-slate-950 overflow-hidden group"
           >
             <div class="relative h-48">
               <img
@@ -1020,26 +1027,26 @@ body {
                 decoding="async"
               />
               <div
-                class="absolute top-3 left-3 bg-gold-500 text-oak-950 text-xs font-bold px-3 py-1 rounded-full"
+                class="absolute top-3 left-3 bg-slate-950 text-white text-xs font-bold px-3 py-1 rounded-full"
               >
                 Insights
               </div>
             </div>
-            <div class="p-6">
-              <div class="flex items-center gap-2 text-oak-400 text-xs mb-3">
+            <div class="p-6 bg-slate-950">
+              <div class="flex items-center gap-2 text-sky-500 text-xs mb-3">
                 <i data-lucide="clock" class="w-3.5 h-3.5"></i> 7 min read
               </div>
               <h3
-                class="text-lg font-bold text-oak-800 mb-3 group-hover:text-gold-600 transition-colors leading-snug"
+                class="text-lg font-bold text-white mb-3 group-hover:text-sky-500 transition-colors leading-snug"
               >
                 Common Audit Findings & How to Avoid Them
               </h3>
-              <p class="text-oak-500 text-sm leading-relaxed mb-4">
+              <p class="text-white/80 text-sm leading-relaxed mb-4">
                 The most common issues auditors find — and practical steps to
                 prevent them in your organisation.
               </p>
               <div
-                class="flex items-center gap-2 text-gold-600 font-semibold text-sm group-hover:gap-3 transition-all"
+                class="flex items-center gap-2 text-sky-500 font-semibold text-sm group-hover:gap-3 transition-all"
               >
                 Read more <i data-lucide="arrow-right" class="w-4 h-4"></i>
               </div>
@@ -1050,7 +1057,7 @@ body {
           <a
             href="financial-statement-preparation.html"
             data-category="preparation"
-            class="article-card fade-up block bg-white rounded-2xl border border-oak-200 overflow-hidden group"
+            class="article-card fade-up block bg-white rounded-2xl border border-slate-950 overflow-hidden group"
           >
             <div class="relative h-48">
               <img
@@ -1063,26 +1070,26 @@ body {
                 decoding="async"
               />
               <div
-                class="absolute top-3 left-3 bg-gold-500 text-oak-950 text-xs font-bold px-3 py-1 rounded-full"
+                class="absolute top-3 left-3 bg-slate-950 text-white text-xs font-bold px-3 py-1 rounded-full"
               >
                 Preparation
               </div>
             </div>
-            <div class="p-6">
-              <div class="flex items-center gap-2 text-oak-400 text-xs mb-3">
+            <div class="p-6 bg-slate-950">
+              <div class="flex items-center gap-2 text-sky-500 text-xs mb-3">
                 <i data-lucide="clock" class="w-3.5 h-3.5"></i> 8 min read
               </div>
               <h3
-                class="text-lg font-bold text-oak-800 mb-3 group-hover:text-gold-600 transition-colors leading-snug"
+                class="text-lg font-bold text-white mb-3 group-hover:text-sky-500 transition-colors leading-snug"
               >
                 Financial Statement Preparation: A Guide for NZ Entities
               </h3>
-              <p class="text-oak-500 text-sm leading-relaxed mb-4">
+              <p class="text-white/80 text-sm leading-relaxed mb-4">
                 How to prepare financial statements that meet NZ standards and
                 are ready for audit.
               </p>
               <div
-                class="flex items-center gap-2 text-gold-600 font-semibold text-sm group-hover:gap-3 transition-all"
+                class="flex items-center gap-2 text-sky-500 font-semibold text-sm group-hover:gap-3 transition-all"
               >
                 Read more <i data-lucide="arrow-right" class="w-4 h-4"></i>
               </div>
@@ -1093,7 +1100,7 @@ body {
           <a
             href="nz-reporting-standards-explained.html"
             data-category="compliance"
-            class="article-card fade-up block bg-white rounded-2xl border border-oak-200 overflow-hidden group"
+            class="article-card fade-up block bg-white rounded-2xl border border-slate-950 overflow-hidden group"
           >
             <div class="relative h-48">
               <img
@@ -1106,26 +1113,26 @@ body {
                 decoding="async"
               />
               <div
-                class="absolute top-3 left-3 bg-gold-500 text-oak-950 text-xs font-bold px-3 py-1 rounded-full"
+                class="absolute top-3 left-3 bg-slate-950 text-white text-xs font-bold px-3 py-1 rounded-full"
               >
                 Compliance
               </div>
             </div>
-            <div class="p-6">
-              <div class="flex items-center gap-2 text-oak-400 text-xs mb-3">
+            <div class="p-6 bg-slate-950 h-full">
+              <div class="flex items-center gap-2 text-sky-500 text-xs mb-3">
                 <i data-lucide="clock" class="w-3.5 h-3.5"></i> 10 min read
               </div>
               <h3
-                class="text-lg font-bold text-oak-800 mb-3 group-hover:text-gold-600 transition-colors leading-snug"
+                class="text-lg font-bold text-white mb-3 group-hover:text-sky-500 transition-colors leading-snug"
               >
                 NZ Reporting Standards Explained
               </h3>
-              <p class="text-oak-500 text-sm leading-relaxed mb-4">
+              <p class="text-white/80 text-sm leading-relaxed mb-4">
                 A clear guide to New Zealand's financial reporting framework,
                 tiers, and standards.
               </p>
               <div
-                class="flex items-center gap-2 text-gold-600 font-semibold text-sm group-hover:gap-3 transition-all"
+                class="flex items-center gap-2 text-sky-500 font-semibold text-sm group-hover:gap-3 transition-all"
               >
                 Read more <i data-lucide="arrow-right" class="w-4 h-4"></i>
               </div>
@@ -1135,7 +1142,7 @@ body {
       </div>
     </section>
 
-    <!-- CTA -->
+    <!-- CTA Banner -->
     <section
       class="py-20 bg-gradient-to-br from-oak-700 via-oak-800 to-oak-700 relative overflow-hidden"
     >
@@ -1145,6 +1152,7 @@ body {
           background-image: url('data:image/svg+xml,%3Csvg width=&quot;60&quot; height=&quot;60&quot; viewBox=&quot;0 0 60 60&quot; xmlns=&quot;http://www.w3.org/2000/svg&quot;%3E%3Cg fill=&quot;none&quot; fill-rule=&quot;evenodd&quot;%3E%3Cg fill=&quot;%23f59e0b&quot; fill-opacity=&quot;0.3&quot;%3E%3Cpath d=&quot;M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z&quot;/%3E%3C/g%3E%3C/g%3E%3C/svg%3E');
         "
       ></div>
+
       <div
         class="relative z-10 max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center fade-up"
       >
@@ -1152,102 +1160,106 @@ body {
           class="text-3xl sm:text-4xl lg:text-5xl font-bold text-white mb-6 leading-tight"
         >
           Have Questions About
-          <span class="font-serif gold-text">Your Audit</span>?
+          <span class="font-serif text-sky-500">Your Audit</span>?
         </h2>
-        <p class="text-oak-200 text-lg mb-10 max-w-2xl mx-auto">
+        <p class="text-[#bacada] text-lg mb-10 max-w-2xl mx-auto">
           Our Knowledge Centre is a great starting point — but if you need
           specific advice for your organisation, we're here to help.
         </p>
         <div class="flex flex-col sm:flex-row gap-4 justify-center">
           <a
             href="contact.html"
-            class="inline-flex items-center justify-center gap-2 bg-gold-500 hover:bg-gold-400 text-oak-950 px-10 py-4 rounded-lg font-bold text-lg tracking-wide transition-all hover:shadow-xl hover:shadow-gold-500/25"
-            ><i data-lucide="file-text" class="w-5 h-5"></i> Request an Audit
-            Proposal</a
+            class="pulse-sky inline-flex items-center justify-center gap-2 bg-[#10140e] hover:bg-[#10141e] text-white px-10 py-4 rounded-lg font-bold text-lg tracking-wide transition-all hover:shadow-xl hover:shadow-black/25"
           >
+            <i data-lucide="file-text" class="w-5 h-5"></i>
+            Request an Audit Proposal
+          </a>
           <a
             href="contact.html"
-            class="inline-flex items-center justify-center gap-2 border-2 border-white/20 hover:border-gold-500/60 text-white hover:text-gold-300 px-10 py-4 rounded-lg font-medium text-lg transition-all"
-            ><i data-lucide="calendar" class="w-5 h-5"></i> Book a
-            Consultation</a
+            class="inline-flex items-center justify-center gap-2 border-2 border-[#00a6f4] hover:border-[#10140e] text-[#00a6f4] hover:text-[#10140e] px-10 py-4 rounded-lg font-medium text-lg transition-all"
           >
+            <i data-lucide="calendar" class="w-5 h-5"></i>
+            Book a Consultation
+          </a>
         </div>
       </div>
     </section>
 
     <!-- Footer -->
-    <footer class="bg-oak-800 text-white pt-16 pb-8">
+    <footer class="bg-[#10140e] text-white pt-16 pb-8">
       <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-12 mb-12">
           <div class="lg:col-span-2">
             <div class="flex items-center gap-3 mb-6">
               <div
-                class="w-10 h-10 rounded-lg bg-gold-500 flex items-center justify-center"
+                class="w-10 h-10 rounded-lg bg-[#00a6f4] flex items-center justify-center"
               >
                 <span class="text-oak-950 font-bold text-lg">SA</span>
               </div>
               <div>
-                <span class="font-bold text-lg">SA Audit Limited</span
-                ><span
-                  class="text-gold-300 text-xs block tracking-widest uppercase"
+                <span class="font-bold text-lg">SA Audit Limited</span>
+                <span
+                  class="text-[#00a6f4] text-xs block tracking-widest uppercase"
                   >Chartered Accountants</span
                 >
               </div>
             </div>
-            <p class="text-oak-200 leading-relaxed max-w-md mb-6">
+            <p class="text-[#bacada] leading-relaxed max-w-md mb-6">
               Friendly, experienced auditors based in Auckland, New Zealand.
               Providing quality audit, review, and assurance services for over
               20 years. CA ANZ Qualified Auditors serving businesses,
               not-for-profits, charities, and clubs.
             </p>
             <div class="flex items-center gap-2 text-sm text-oak-300">
-              <i data-lucide="shield-check" class="w-4 h-4 text-gold-400"></i
-              ><span
+              <i data-lucide="shield-check" class="w-4 h-4 text-[#00a6f4]"></i>
+              <span class="text-[#bacada]"
                 >Qualified Auditors of Chartered Accountants Australia and New
                 Zealand</span
               >
             </div>
           </div>
+
           <div>
             <h4 class="font-semibold text-white mb-4">Quick Links</h4>
             <ul class="space-y-3">
               <li>
                 <a
                   href="about.html"
-                  class="text-oak-200 hover:text-gold-400 transition-colors text-sm"
+                  class="text-[#bacada] hover:text-[#00a6f4] transition-colors text-sm"
                   >About Us</a
                 >
               </li>
               <li>
                 <a
                   href="services.html"
-                  class="text-oak-200 hover:text-gold-400 transition-colors text-sm"
+                  class="text-[#bacada] hover:text-[#00a6f4] transition-colors text-sm"
                   >Our Services</a
                 >
               </li>
               <li>
                 <a
                   href="how-we-helped.html"
-                  class="text-oak-200 hover:text-gold-400 transition-colors text-sm"
+                  class="text-[#bacada] hover:text-[#00a6f4] transition-colors text-sm"
                   >How We Helped</a
                 >
               </li>
               <li>
                 <a
-                  href="knowledge-centre.html"
-                  class="text-oak-200 hover:text-gold-400 transition-colors text-sm"
-                  >Knowledge Centre</a
+                  href="contact.html"
+                  class="text-[#bacada] hover:text-[#00a6f4] transition-colors text-sm"
+                  >Contact Us</a
                 >
               </li>
               <li>
                 <a
-                  href="contact.html"
-                  class="text-oak-200 hover:text-gold-400 transition-colors text-sm"
-                  >Contact Us</a
+                  href=""
+                  class="text-[#bacada] hover:text-[#00a6f4] transition-colors text-sm"
+                  >FAQs</a
                 >
               </li>
             </ul>
           </div>
+
           <div>
             <h4 class="font-semibold text-white mb-4">
               Industries We Work With
@@ -1256,57 +1268,58 @@ body {
               <li>
                 <a
                   href="charities.html"
-                  class="text-oak-200 hover:text-gold-400 transition-colors text-sm"
+                  class="text-[#bacada] hover:text-[#00a6f4] transition-colors text-sm"
                   >Charities</a
                 >
               </li>
               <li>
                 <a
                   href="not-for-profit.html"
-                  class="text-oak-200 hover:text-gold-400 transition-colors text-sm"
+                  class="text-[#bacada] hover:text-[#00a6f4] transition-colors text-sm"
                   >Not-for-Profit</a
                 >
               </li>
               <li>
                 <a
                   href="trusts.html"
-                  class="text-oak-200 hover:text-gold-400 transition-colors text-sm"
+                  class="text-[#bacada] hover:text-[#00a6f4] transition-colors text-sm"
                   >Trusts</a
                 >
               </li>
               <li>
                 <a
                   href="professional-practices.html"
-                  class="text-oak-200 hover:text-gold-400 transition-colors text-sm"
+                  class="text-[#bacada] hover:text-[#00a6f4] transition-colors text-sm"
                   >Professional Practices</a
                 >
               </li>
               <li>
                 <a
                   href="smes.html"
-                  class="text-oak-200 hover:text-gold-400 transition-colors text-sm"
+                  class="text-[#bacada] hover:text-[#00a6f4] transition-colors text-sm"
                   >SMEs</a
                 >
               </li>
               <li>
                 <a
                   href="incorporated-societies.html"
-                  class="text-oak-200 hover:text-gold-400 transition-colors text-sm"
+                  class="text-[#bacada] hover:text-[#00a6f4] transition-colors text-sm"
                   >Incorporated Societies</a
                 >
               </li>
             </ul>
           </div>
         </div>
+
         <div class="border-t border-oak-600 pt-8">
           <div
             class="flex flex-col md:flex-row items-center justify-between gap-4"
           >
-            <div class="text-oak-400 text-sm">
+            <div class="text-[#bacada] text-sm">
               &copy; <span id="currentYear"></span> SA Audit Limited. All rights
               reserved.
             </div>
-            <div class="text-oak-400 text-sm">
+            <div class="text-[#bacada] text-sm">
               Suite 45, Royal Oak Mall, Auckland 1023
             </div>
           </div>
@@ -1314,9 +1327,13 @@ body {
       </div>
     </footer>
 
+    <!-- Spacer for mobile sticky bar -->
+    <div class="lg:hidden h-16"></div>
+
+    <!-- Back to top button -->
     <button
       id="backToTop"
-      class="fixed bottom-6 right-6 z-40 w-12 h-12 bg-oak-700 hover:bg-gold-500 text-white hover:text-oak-950 rounded-full shadow-lg transition-all duration-300 opacity-0 invisible flex items-center justify-center"
+      class="fixed bottom-20 right-6 lg:bottom-6 z-40 w-12 h-12 bg-[#10140e] text-white border-2 border-white hover:border-[#10140e] rounded-full shadow-lg transition-all duration-300 opacity-0 invisible flex items-center justify-center"
       aria-label="Back to top"
     >
       <i data-lucide="arrow-up" class="w-5 h-5"></i>
@@ -1344,42 +1361,40 @@ body {
           document.body.style.overflow = "";
         }),
       );
-      
-// Mobile Dropdowns - Event Delegation
-mobileMenu.addEventListener('click', function (e) {
-    const button = e.target.closest(
-        '#mobileServicesBtn, #mobileIndustriesBtn, #mobileBlogsBtn'
-    );
 
-    if (!button) return;
+      // Mobile Dropdowns - Event Delegation
+      mobileMenu.addEventListener("click", function (e) {
+        const button = e.target.closest(
+          "#mobileServicesBtn, #mobileIndustriesBtn, #mobileBlogsBtn",
+        );
 
-    e.preventDefault();
-    e.stopPropagation();
+        if (!button) return;
 
-    const dropdownMap = {
-        mobileServicesBtn: 'mobileServicesDropdown',
-        mobileIndustriesBtn: 'mobileIndustriesDropdown',
-        mobileBlogsBtn: 'mobileBlogsDropdown'
-    };
+        e.preventDefault();
+        e.stopPropagation();
 
-    const dropdownId = dropdownMap[button.id];
-    const dropdown = document.getElementById(dropdownId);
-    const chevron = button.querySelector('i');
+        const dropdownMap = {
+          mobileServicesBtn: "mobileServicesDropdown",
+          mobileIndustriesBtn: "mobileIndustriesDropdown",
+          mobileBlogsBtn: "mobileBlogsDropdown",
+        };
 
-    if (!dropdown) return;
+        const dropdownId = dropdownMap[button.id];
+        const dropdown = document.getElementById(dropdownId);
+        const chevron = button.querySelector("i");
 
-    dropdown.classList.toggle('open');
+        if (!dropdown) return;
 
-    const isOpen = dropdown.classList.contains('open');
+        dropdown.classList.toggle("open");
 
-    button.setAttribute('aria-expanded', isOpen);
+        const isOpen = dropdown.classList.contains("open");
 
-    if (chevron) {
-        chevron.style.transform = isOpen
-            ? 'rotate(180deg)'
-            : 'rotate(0deg)';
-    }
-});
+        button.setAttribute("aria-expanded", isOpen);
+
+        if (chevron) {
+          chevron.style.transform = isOpen ? "rotate(180deg)" : "rotate(0deg)";
+        }
+      });
 
       const fadeElements = document.querySelectorAll(".fade-up");
       const fadeObserver = new IntersectionObserver(
